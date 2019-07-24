@@ -4,8 +4,12 @@
 ## MVP
 
 Display Videos
+
 Genres
+
 Search
+
 MyList (CRUD)
+
 Bonus: Comments
 Bonus: Profile
