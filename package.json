@@ -1,5 +1,5 @@
 {
-  "name": "Netflix_clone",
+  "name": "EarthFlix",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.5.5",
