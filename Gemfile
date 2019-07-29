@@ -48,10 +48,6 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails'
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 end
 
 group :development do
@@ -62,10 +58,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 end
 
 group :test do
