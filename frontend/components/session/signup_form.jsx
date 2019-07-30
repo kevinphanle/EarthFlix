@@ -26,7 +26,7 @@ class SignupFrom extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.signup(this.state).then(()=> this.props.history.push('/'))
+        this.props.signup(this.state).then(()=> this.props.history.push('/browse'))
     }
 
     render () {

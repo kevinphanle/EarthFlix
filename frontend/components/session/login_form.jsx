@@ -16,7 +16,7 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const { email, password } = this.state;
         const user = { email, password };
-        this.props.login(user).then(() => this.props.history.push('/'))
+        this.props.login(user).then(() => this.props.history.push('/browse'))
     }
 
     update(field) {
