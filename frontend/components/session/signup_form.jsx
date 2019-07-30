@@ -33,10 +33,11 @@ class SignupFrom extends React.Component {
         return (
             <div className="signup-wrapper">
                     
-                <div className="guest-login">
-                    <button onClick={this.handleGuestLogin}>Demo User</button>
-                </div>
+                    
                 <section className="signup-form-wrapper">
+                    <form onSubmit={this.handleGuestLogin}>
+                        <input type="submit" value="Demo User Login" className="guest-login-btn" />
+                    </form>
                     <h3>{this.props.formType}</h3>
                     <form className="signup-form" onSubmit={this.handleSubmit}>
                         <label htmlFor="email">Email:
@@ -44,7 +45,7 @@ class SignupFrom extends React.Component {
                                 type="text"
                                 id="email"
                                 value={this.state.email}
-                                className="signup-email-input"
+                                className="email-signup"
                                 onChange={this.update('email')}
                             />
                         </label>
@@ -54,13 +55,13 @@ class SignupFrom extends React.Component {
                                 type="password"
                                 id="password"
                                 value={this.state.password} 
-                                className="signup-password-input"
+                                className="password-signup"
                                 onChange={this.update('password')}
                             />
                         </label>
 
                         <input type="submit" className="signup-form-btn" value="Sign Up" />
-                        <p>Already a part of EarthFlix? <Link to="/login">Sign In now!</Link></p>
+                        {/* <p>Already a part of EarthFlix? <Link to="/login">Sign In now!</Link></p> */}
                     </form>
                 </section>
             </div>
