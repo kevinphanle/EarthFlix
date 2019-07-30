@@ -20,7 +20,7 @@
 
 .header-nav {
     display: flex;
-    width: 50%;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 }
@@ -46,6 +46,20 @@
     border-radius: 3px;
     margin: 10px;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-btn {
+    padding: 10px 15px;
+    border-radius: 3px;
+    margin: 10px;
+    font-family: 'Montserrat',
+    sans-serif;
     text-decoration: none;
     color: white;
     background-color: red;

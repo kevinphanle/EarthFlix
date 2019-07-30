@@ -33,7 +33,7 @@ class Navbar extends React.Component {
         } else {
             return (
                 <header className={navbarClass}>
-                    <section className="header-nav centered">
+                    <section className="header-nav">
                         <Link to="/" className='logo-btn'>EarthFlix</Link>
 
                         <Link to="/login" className='login-btn'>Sign In</Link>
