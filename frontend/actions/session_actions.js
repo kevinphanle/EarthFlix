@@ -22,7 +22,7 @@ const logoutCurrentUser = () => ({
 });
 
 export const login = (user) => dispatch => (
-    APIUtil.login(user).then(resposne => dispatch(receiveCurrentUser(response)))
+    APIUtil.login(user).then(response => dispatch(receiveCurrentUser(response)))
 );
 
 export const logout = () => dispatch => (

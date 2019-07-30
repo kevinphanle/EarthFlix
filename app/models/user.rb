@@ -35,7 +35,8 @@ class User < ApplicationRecord
     end
 
     def valid_password?(password)
-        BCrypt::Password.new(self.password_digest).is_password?(password)
+        current_password = BCrypt::Password.new(self.password_digest)
+        current_password.is_password?(password)
     end
 
     def self.find_by_credentials(email, password)

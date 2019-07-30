@@ -1,7 +1,7 @@
 import React from "react";
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
                     
-class SignupFrom extends React.Component {
+class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,21 +11,23 @@ class SignupFrom extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        const { email, password } = this.state;
+        const user = { email, password };
+        this.props.login(user).then(() => this.props.history.push('/'))
+    }
+
     update(field) {
         return (e) => {
             this.setState({ [field]: e.target.value})
         }
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        this.props.signup(this.state).then(()=> this.props.history.push('/'))
-    }
-
     render () {
         return (
-            <section className="signup-form-wrapper">
-                <form className="signup-form" onSubmit={this.handleSubmit}>
+            <section className="login-form-wrapper">
+                <form className="login-form" onSubmit={this.handleSubmit}>
                     <label htmlFor="email">Email:
                         <input
                             type="text"
@@ -38,16 +40,16 @@ class SignupFrom extends React.Component {
                         <input
                             type="password"
                             id="password"
-                            value={this.state.password}  
+                            value={this.state.password}
                             onChange={this.update('password')}
                         />
                     </label>
 
                     <input type="submit" value="Sign Up" />
-                    <p>Already a part of EarthFlix? <Link to="/login">Sign In now!</Link></p>
+                    <p>New to EarthFlix? <Link to="/signup">Sign Up now!</Link></p>
                 </form>
             </section>
         );
     }
 }
-export default withRouter(SignupFrom);
+export default LoginForm;
