@@ -12,7 +12,8 @@ const Splash = props => (
                     <span>Watch Anywhere. Cancel Anytime.</span>
 
                     <Link to='/signup' className='splash-signup-btn'>
-                        <h3>Sign Up Today!</h3>
+                        <h3>Sign Up Today </h3>
+                        <span>></span>
                     </Link>
                 </section>
             </div>

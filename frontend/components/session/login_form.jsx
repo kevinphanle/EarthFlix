@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-                    
+import { Link, withRouter } from 'react-router-dom';
+
+
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
@@ -26,30 +27,47 @@ class LoginForm extends React.Component {
 
     render () {
         return (
-            <section className="login-form-wrapper">
-                <form className="login-form" onSubmit={this.handleSubmit}>
-                    <label htmlFor="email">Email:
-                        <input
-                            type="text"
-                            id="email"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                        />
-                    </label>
-                    <label htmlFor="password">Password:
-                        <input
-                            type="password"
-                            id="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                        />
-                    </label>
 
-                    <input type="submit" value="Sign Up" />
-                    <p>New to EarthFlix? <Link to="/signup">Sign Up now!</Link></p>
-                </form>
-            </section>
+            <div>
+                <div className="login-wrapper-background">
+                    <img src={window.splashBackground} alt=""/>
+                </div>
+
+                <section className="login-form-wrapper">
+                    <div className="login-form-body">
+                        <h3>{this.props.formType}</h3>
+
+                        <form className="login-form" onSubmit={this.handleSubmit}>
+                            <label htmlFor="email">
+                                <span>Email:</span>
+                                <input
+                                    type="text"
+                                    id="email"
+                                    className="login-email-input"
+                                    value={this.state.email}
+                                    onChange={this.update('email')}
+                                />
+                            </label>
+                            <label htmlFor="password">
+                                <span>Password:</span>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    className="login-password-input"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                />
+                            </label>
+
+                            <input type="submit" className="login-form-btn" value={this.props.formType} />
+                            <p className="other-form">New to EarthFlix? <Link to="/signup">Sign Up now!</Link></p>
+                        </form>
+
+                        <figure className="black-bg"></figure>
+                    </div>
+                </section>
+            </div>
         );
     }
 }
-export default LoginForm;
+export default withRouter(LoginForm);

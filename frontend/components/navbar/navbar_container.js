@@ -1,19 +1,18 @@
 import { connect } from 'react-redux';
-import LoginForm from './login_form';
-import { login } from '../../actions/session_actions';
-
+import Navbar from './navbar';
+import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return ({
-        formType: "Log In",
+         currentUser: state.entities.users[state.session.id]
     })
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        login: (user) => dispatch(login(user))
+        logout: () => dispatch(logout())
     }
 }
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(LoginForm);
+)(Navbar);

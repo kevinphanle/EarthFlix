@@ -1,6 +1,6 @@
 .welcome-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     min-height: 100%;
     filter: brightness(40%);
     position: absolute;
@@ -54,17 +54,23 @@
     color: white;
     font-size: 30px;
     border-radius: 5px;
-    padding: 5px 20px;
+    padding: 10px 20px;
     width: 400px;
     height: auto;
     margin: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-shadow: 2px 2px 8px white;
 
     h3 {
         font-size: 35px;
         text-transform: uppercase;
         padding: none;
+        
+    }
+    span {
+        font-size: 35px;
+        margin-left: 30px;
     }
 }

@@ -5,13 +5,10 @@ import LoginForm from './session/login_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Link } from 'react-router-dom';
 import Splash from './splash/splash';
+import Navbar from './navbar/navbar_container';
 const App = () => (
     <div>
-        <header className="headerBar">
-            <Link to="/">
-                <h1>EarthFlix</h1>
-            </Link>
-        </header>
+        <Navbar />
 
         
         <AuthRoute exact path="/" component={Splash} />
