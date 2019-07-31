@@ -18,7 +18,16 @@ class Navbar extends React.Component {
         const { location } = this.props.history;
         const navbarClass = location.pathname === '/' ? "right-header-wrapper" : "left-header-wrapper";
 
-
+        let SigninBtnClass, headerClass, hasBorder, alreadyHaveAccountMsg;
+        if (location.pathname === '/signup') {
+            SigninBtnClass = 'login-btn-white';
+            headerClass = 'header-nav centered';
+            hasBorder = 'signup-border';
+        } else {
+            SigninBtnClass = 'login-btn';
+            headerClass = 'header-nav';
+            hasBorder = '';
+        }
 
         if (currentUser) {
             return (
@@ -32,11 +41,11 @@ class Navbar extends React.Component {
             )
         } else {
             return (
-                <header className={navbarClass}>
-                    <section className="header-nav">
+                <header className={`${navbarClass} ${hasBorder}` }>
+                    <section className={headerClass}>
                         <Link to="/" className='logo-btn'>EarthFlix</Link>
 
-                        <Link to="/login" className='login-btn'>Sign In</Link>
+                        <Link to="/login" className={SigninBtnClass}>Sign In</Link>
                     </section>
                 </header>
             )

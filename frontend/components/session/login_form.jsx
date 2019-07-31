@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
             password: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleGuestLogin = this.handleGuestLogin.bind(this);
     }
 
     handleSubmit(e) {
@@ -18,6 +19,13 @@ class LoginForm extends React.Component {
         const user = { email, password };
         this.props.login(user).then(() => this.props.history.push('/browse'))
     }
+
+    handleGuestLogin(e) {
+        e.preventDefault();
+        const guest = { email: 'guest@guest.com', password: 'password' };
+        this.props.login(guest).then(() => this.props.history.push('/browse'));
+    }
+
 
     update(field) {
         return (e) => {
@@ -60,6 +68,9 @@ class LoginForm extends React.Component {
                             </label>
 
                             <input type="submit" className="login-form-btn" value={this.props.formType} />
+
+                            <input type="submit" className="guest-login-btn" value="Demo User Login" onClick={this.handleGuestLogin}/>
+
                             <p className="other-form">New to EarthFlix? <Link to="/signup">Sign Up now!</Link></p>
                         </form>
 

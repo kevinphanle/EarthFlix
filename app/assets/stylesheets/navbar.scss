@@ -18,6 +18,11 @@
     width: 100%;
 }
 
+.signup-border {
+    border-bottom: 1px solid lightgray;
+
+}
+
 .header-nav {
     display: flex;
     width: 100%;
@@ -66,4 +71,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.login-btn-white {
+    background: white;
+    border: none;
+    color: gray;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
 }

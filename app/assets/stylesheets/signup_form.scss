@@ -10,6 +10,11 @@
     align-items: center;
     justify-content: flex-start;
 
+    &:before {
+        content: "";
+        height: 100px;
+    }
+
     h3 {
         margin-top: 50px;
         font-size: 30px;
@@ -49,7 +54,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
+    font-size: 20px;
 
 }
 
@@ -64,11 +69,12 @@
 }
 
 .guest-login-btn {
-    margin-top: 100px;
+    // margin-top: 100px;
     width: 100%;
-    padding: 20px;
+    padding: 10px 15px;
     background-color: rgb(57, 123, 237);
     color: white;
     border-radius: 3px;
     border: none;
+    font-size: 20px;
 }
