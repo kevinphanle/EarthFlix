@@ -33,7 +33,9 @@ class Navbar extends React.Component {
             return (
                 <header className={navbarClass}>
                     <section className="header-nav">
-                        <Link to="/" className="logo-btn">EarthFlix</Link>
+                        <Link to="/" className="logo-btn">
+                            <img src={window.mainLogo} className="earthflix-logo" alt=""/>
+                        </Link>
 
                         <button onClick={this.handleClick} className="logout-btn" >Log Out</button>
                     </section>
@@ -43,7 +45,10 @@ class Navbar extends React.Component {
             return (
                 <header className={`${navbarClass} ${hasBorder}` }>
                     <section className={headerClass}>
-                        <Link to="/" className='logo-btn'>EarthFlix</Link>
+                        <Link to="/" className='logo-btn'>
+                            <img src={window.mainLogo} className="earthflix-logo" alt="" />
+
+                        </Link>
 
                         <Link to="/login" className={SigninBtnClass}>Sign In</Link>
                     </section>
