@@ -12,7 +12,7 @@ import IndexNav from './navbar/index_navbar_container';
 
 const App = () => {
     return (
-        <>
+        <div>
             <Switch>
                 <ProtectedRoute path="/browse" component={IndexNav} />
                 <AuthRoute exact path={["/", "/signup", "/login"]} component={Navbar} />
@@ -28,7 +28,7 @@ const App = () => {
             </main>
 
             <AuthRoute path="/" component={footer}/>
-        </>
+        </div>
 
     )
 };
