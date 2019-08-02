@@ -29,7 +29,7 @@ class ShowPreviewPlayer extends React.Component {
             <section id="show-preview-wrapper" onClick={this.watch} > 
                 <img src={show ? show.posterUrl : ""} alt=""/>
                 <figure className="preview-video-player">
-                    <video id={`show-${show.id} preview-video`} poster="https://cdn.pixabay.com/photo/2018/02/09/21/46/rose-3142529__340.jpg">
+                    <video id="preview-video" poster="https://cdn.pixabay.com/photo/2018/02/09/21/46/rose-3142529__340.jpg">
                         {/* <source src={show.videos.videoUrl} type="video/mp4" /> */}
                     </video>
                     <button onClick={this.clickPlay} className="preview-play-btn">

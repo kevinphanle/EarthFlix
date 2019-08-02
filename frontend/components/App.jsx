@@ -15,9 +15,7 @@ const App = () => {
         <>
             <Switch>
                 <ProtectedRoute path="/browse" component={IndexNav} />
-                <AuthRoute path="/signup" component={Navbar} />
-                <AuthRoute path="/login" component={Navbar} />
-                <AuthRoute exact path="/" component={Navbar} />
+                <AuthRoute exact path={["/", "/signup", "/login"]} component={Navbar} />
             </Switch>
 
             <main className="main-content">

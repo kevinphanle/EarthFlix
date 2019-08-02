@@ -19,7 +19,7 @@ class Video < ApplicationRecord
 
     validates :name, :description, :duration, presence: true
     validates :video_type, inclusion: { in: VIDEO_TYPES }, presence: true
-    validates :video_url, uniqueness: true, presence: true
+    # validates :video_url, uniqueness: true, presence: true
 
     has_many :show_videos
 
@@ -29,6 +29,6 @@ class Video < ApplicationRecord
     
     has_one :movie
 
-    has_one_attached :poster
+    # has_one_attached :poster
     has_one_attached :video_file
 end

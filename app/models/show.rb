@@ -14,7 +14,7 @@
 
 class Show < ApplicationRecord
 
-    SHOW_TYPES = %w()
+    SHOW_TYPES = %w(MOVIE SHOW)
 
     validates :title, :year, :description, presence: true
 
@@ -24,7 +24,7 @@ class Show < ApplicationRecord
         through: :show_videos,
         source: :video
 
-    has_one_attached :poster
+    has_one_attached :poster_file
 
 
 end

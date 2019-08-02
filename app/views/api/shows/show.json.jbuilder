@@ -1,1 +1,1 @@
-json.extract! @show, :id, :title, :year, :rating, :description
+json.partial! 'api/shows/show', show: @show
