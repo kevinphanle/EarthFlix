@@ -38,21 +38,85 @@ planet_earth_1_video = planet_earth_1_show.videos.create!(
     duration: 600000
 )
 
-planet_earth_1_video_file = open('https://earthflix-dev.s3-us-west-1.amazonaws.com/Earth.mp4')
-planet_earth_1_video.video_file.attach(io: planet_earth_1_video_file, filename: "earth.mp4")
-planet_earth_1_video.save!
+# planet_earth_1_video_file = open('/Users/kevinphanle/Desktop/app_academy/earthflix-videos/Earth.mp4')
+
+# planet_earth_1_video.video_file.attach(io: planet_earth_1_video_file, filename: "Earth.mp4")
+# planet_earth_1_video.save!
+
+# / ---------------------------- Planet Ocean ----------------------------------------------- /
+
+ocean_show = Show.create!(
+    title: "Planet Ocean",
+    description: "All about the Ocean and its creatures",
+    year: 2003,
+    rating: 8.5
+)
+
+ocean_poster_file = open('https://earthflix-dev.s3-us-west-1.amazonaws.com/snapshots/sea_snap_shot.png')
+ocean_show.poster_file.attach(io: ocean_poster_file, filename: "sea_snap_shot.png")
+ocean_show.save!
+
+ocean_video = ocean_show.videos.create!(
+    name: "The Shore",
+    description: "Golden sun on the golden shore",
+    video_type: "EPISODE",
+    duration: 600000
+)
+
+# ocean_video_file = open('https://earthflix-dev.s3-us-west-1.amazonaws.com/Sea.mp4');
+# ocean_video.video_file.attach(io: ocean_video, filename: "Sea.mp4");
+# ocean_video.save!
+
+# ---------------- Artic ------------- /
+
+aurora_show = Show.create!(
+    title: "The Aurora Borealis",
+    description: "A beautiful display of lights in the Artic",
+    year: 2019,
+    rating: 7.0
+)
+
+aurora_poster_file = open('https://earthflix-dev.s3-us-west-1.amazonaws.com/snapshots/aurora_snap_shot.png')
+aurora_show.poster_file.attach(io: aurora_poster_file, filename: "aurora_snap_shot.png")
+aurora_show.save!
 
 
-# show2 = Show.create(title: 'Planet Earth 2', description: "The show about Earth twice", year: 2002, rating: 7.7)
+# / --------------Forest Show -------------- /
 
-# Videos
+forest_show = Show.create!(
+    title: "The Forest",
+    description: "Green greeen and more green. and sometimes white.",
+    year: 2020,
+    rating: 8.9
+)
 
-# video1 = Video.create!(video_url: 'https://www.youtube.com/watch?v=GKALmB0W8jI', thumbnail_url: "https://m.media-amazon.com/images/M/MV5BNzVhMTU4ZTMtZmZhNC00YjIwLWJiM2ItMWI0NzIxNTE4ZmRmXkEyXkFqcGdeQXVyODE1NDM3MDQ@._V1_.jpg", name: 'Lava Monsters', description: 'Episode 1 of Planet Earth', video_type: 'EPISODE', duration: 600000)
-# video2 = Video.create!(video_url: 'https://www.youtube.com/watch?v=GHlHqvoRSwo', thumbnail_url: "https://images-na.ssl-images-amazon.com/images/I/81nq7aMbr8L._SL1500_.jpg", name: 'Ice Man', description: 'Ice Man of the Ice', video_type: 'EPISODE', duration: 600000)
-# video3 = Video.create!(video_url: 'https://www.youtube.com/watch?v=nX6ZEcwRrw0', thumbnail_url: "https://cdn3.movieweb.com/i/article/kLIetakj0M6JO1K0z8EykZQSDPri6y/798:50/Ghost-Rider-Movie-Originally-R-Rated-Nicolas-Cage.jpg", name: 'Ghost Rider Habitat', description: 'GhostRider: Planet Earth 2', video_type: 'EPISODE', duration: 600000)
+forest_poster_file= open('https://earthflix-dev.s3-us-west-1.amazonaws.com/snapshots/snowy_trees_snap_shot.png')
+forest_show.poster_file.attach(io: forest_poster_file, filename: "snowy_trees_snap_shot.png")
+forest_show.save!
 
-# show_videos joins
+# /-------------------- Animals ---------------- /
 
-# j1 = ShowVideo.create!(show_id: planet_earth_1_show.id, video_id: video1.id)
-# j2 = ShowVideo.create!(show_id: planet_earth_1_show.id, video_id: video2.id)
-# j3 = ShowVideo.create!(show_id: planet_earth_1_show.id, video_id: video3.id)
+owl_show = Show.create!(
+    title: "The Snowy Owl",
+    description: "He spins his head all the way around",
+    year: 2010,
+    rating: 4.5
+)
+
+owl_poster_file = open('https://earthflix-dev.s3-us-west-1.amazonaws.com/snapshots/owl_snap_shot.png')
+owl_show.poster_file.attach(io: owl_poster_file, filename: "owl_snap_shot.png")
+owl_show.save!
+
+
+# ----------- Jellyfish ------------------------ /
+
+jellyfish_show = Show.create!(
+    title: "Jellyfish",
+    description: "These jellyfish are hungry",
+    year: 2012,
+    rating: 9.9
+)
+
+jellyfish_poster_file = open('https://earthflix-dev.s3-us-west-1.amazonaws.com/snapshots/jellyfish_snap_shot.png')
+jellyfish_show.poster_file.attach(io: jellyfish_poster_file, filename: 'jellyfish_snap_shot.png')
+jellyfish_show.save!

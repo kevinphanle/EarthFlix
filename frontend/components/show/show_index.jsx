@@ -47,11 +47,7 @@ class ShowIndex extends React.Component {
             return (<ShowRows key={i} rowNumber={i} shows={showsPerRow[rowShow]} getShowInfo={fetchShow} />);
             
         });
-        // const showRowList = showsPerRow.map((rowShow, i) => {
-        //     debugger;
-        // })
-        
-        // debugger;
+
         return (
             <main className="show-index-wrapper">
                 <figure className="big-video-preview">
@@ -63,6 +59,8 @@ class ShowIndex extends React.Component {
                 <ul className="show-index">
                     {showRowList}
                 </ul>
+
+                <figure className="index-bg"></figure>
             </main>
         );
     }

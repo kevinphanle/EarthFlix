@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Splash = props => (
     <div className="splash-image-wrapper">
-        <img src={window.splashBackground} className="welcome-image" />
+        <img src={window.earthBg} className="welcome-image" />
         <div className="splash-wrapper">
 
             <div className="splash-content-wrapper">

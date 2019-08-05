@@ -14,12 +14,20 @@ class IndexNav extends React.Component {
     render() {
         return (
             <header className="index-navbar-wrapper">
-                <header className="index-navbar">
+                <header className="index-navbar fade-dark-nav">
 
                     <section className="left-nav">
                         <Link to="/browse" className="main-logo-btn">
                             <img src={window.mainLogo} className="earthflix-logo" alt=""/>
                         </Link>
+                        {/* <div className="left-nav-links"> */}
+                            <Link to="/">Home</Link>
+                            <Link to="/">TV Shows</Link>
+                            <Link to="/">Movies</Link>
+                            <Link to="/">Recently Added</Link>
+                            <Link to="/">My List</Link>
+
+                        {/* </div> */}
                     </section>
 
                     <section className="right-nav">

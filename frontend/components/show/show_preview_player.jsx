@@ -6,6 +6,7 @@ class ShowPreviewPlayer extends React.Component {
         super(props)
         this.state = {
             height: 0,
+            mute: true,
         }
         this.watch = this.watch.bind(this);
     }
@@ -13,12 +14,15 @@ class ShowPreviewPlayer extends React.Component {
     componentDidMount() {
         // const width = document.getElementById("show-preview-wrapper");
         // const height = width / 1.5;
-
-        // this.setState({ height });
+        const height = 160;
+        this.setState({ height });
     }
 
     watch() {
         const { show } = this.props;
+        // if (show.show_type === 'MOVIE') {
+            this.props.history.push(`/watch/${show.id}`)
+        // }
     }
 
     render() {
@@ -27,13 +31,15 @@ class ShowPreviewPlayer extends React.Component {
 
         return (
             <section id="show-preview-wrapper" onClick={this.watch} > 
-                <img src={show ? show.posterUrl : ""} alt=""/>
+                <img className="show-card" onClick={this.watch} src={show ? show.posterUrl : ""} alt=""/>
                 <figure className="preview-video-player">
-                    <video id="preview-video" poster="https://cdn.pixabay.com/photo/2018/02/09/21/46/rose-3142529__340.jpg">
+                    <video id="preview-video" onClick={this.watch}>
                         {/* <source src={show.videos.videoUrl} type="video/mp4" /> */}
                     </video>
                     <button onClick={this.clickPlay} className="preview-play-btn">
                         <i className="fas fa-play play-btn-triangle"></i>
+                        <i className="fas fa-circle play-btn-bg"></i>
+                        <i className="far fa-circle play-btn-outline"></i>
                     </button>
                 </figure>
 

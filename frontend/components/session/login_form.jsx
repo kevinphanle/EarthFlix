@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
 
             <div>
                 <div className="login-wrapper-background">
-                    <img src={window.splashBackground} alt=""/>
+                    <img src={window.earthBg} alt=""/>
                 </div>
 
                 <section className="login-form-wrapper">

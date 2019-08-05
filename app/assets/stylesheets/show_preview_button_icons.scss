@@ -1,0 +1,53 @@
+.play-btn-triangle {
+    position: absolute;
+    z-index: 600;
+    transform-origin: center;
+    font-size: 10px;
+    color: red;
+    left: 22.5px;
+    top: 34px;
+}
+
+.play-btn-bg {
+    transform-origin: center;
+    font-size: 25px;
+    opacity: .5;
+}
+
+.play-btn-outline {
+    position: absolute;
+    z-index: 600;
+    transform-origin: center;
+    color: white;
+    font-size: 25px;
+    opacity: .6;
+}
+
+.play-pause-btn-icon {
+    position: relative;
+}
+
+.button-symbol {
+    position: absolute;
+    z-index: 25;
+    font-size: 6px;
+    transform-origin: center;
+    color: #9b9b9b;
+}
+
+.preview-btn-bg {
+    position: absolute;
+    z-index: 15;
+    transform-origin: center;
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+.preview-btn-outline {
+    position: absolute;
+    z-index: 20;
+    transform-origin: center;
+    font-size: 14px;
+    color: white;
+    opacity: 0.6;
+}
