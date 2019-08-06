@@ -8,6 +8,7 @@ import { fetchShows, fetchVideo } from './actions/show_actions';
 import { logout } from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
+    const root = document.getElementById("root");
     let store;
     
     if (window.currentUser) {
@@ -30,6 +31,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchVideo = fetchVideo;
     window.logout = logout;
 
-    const root = document.getElementById("root");
     ReactDOM.render(<Root store={store}/>, root);
 });

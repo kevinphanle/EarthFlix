@@ -2,15 +2,14 @@
 #
 # Table name: videos
 #
-#  id            :bigint           not null, primary key
-#  video_url     :string           not null
-#  name          :string           not null
-#  description   :string           not null
-#  duration      :integer          not null
-#  thumbnail_url :string           not null
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  video_type    :string           not null
+#  id          :bigint           not null, primary key
+#  name        :string           not null
+#  description :string           not null
+#  duration    :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  video_type  :string           not null
+#  show_id     :integer
 #
 
 class Video < ApplicationRecord
@@ -23,9 +22,7 @@ class Video < ApplicationRecord
 
     has_many :show_videos
 
-    has_many :shows,
-        through: :show_videos,
-        source: :show
+    belongs_to :show
     
     has_one :movie
 

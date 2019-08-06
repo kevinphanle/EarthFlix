@@ -1,15 +1,22 @@
 import React from "react";
 import ShowRows from './show_rows';
+import BigVideoContainer from '../big_video/big_video_container';
+
                     
 class ShowIndex extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            currentGenre: null,
+            muted: true,
+            currentShow: null,
+        }
     }
 
     componentDidMount() {
-        this.props.fetchShows();
-        const showsPerRow = this.makeRows();
+        this.props.requestAllShows().then((dispatchedAction) => this.setState({ currentShow: Math.floor(Math.random() * Object.keys(dispatchedAction.shows).length) }));
+        // const showsPerRow = this.makeRows();
 
     }
 
@@ -30,7 +37,7 @@ class ShowIndex extends React.Component {
                 numRows++;
             } else if (i === shows.length - 1) {
                 showsPerRow[numRows] = row;
-           }
+            }
         }
 
         return showsPerRow;
@@ -38,30 +45,35 @@ class ShowIndex extends React.Component {
 
     render () {
 
-        const { shows, fetchShow } = this.props;
-        
-        const showsPerRow = this.makeRows();
+        const { shows, videos } = this.props;
+        let previewShow = null, showsPerRow = null, showRowList = [];
+        showsPerRow = this.makeRows();
+        previewShow = shows[0]
+        // debugger;
 
-        const showRowList = Object.keys(showsPerRow).map((rowShow, i) => {
+        showRowList = Object.keys(showsPerRow).map((rowShow, i) => {
             // debugger;
-            return (<ShowRows key={i} rowNumber={i} shows={showsPerRow[rowShow]} getShowInfo={fetchShow} />);
+            return (<ShowRows key={i} rowNumber={i} shows={showsPerRow[rowShow]} videos={videos} />);
             
         });
 
         return (
-            <main className="show-index-wrapper">
+            <section className="show-index-wrapper">
+
                 <figure className="big-video-preview">
                     <img src="" alt="" className="big-video-poster" />
                     <video autoPlay className="big-video">
-                        
+                        {previewShow ? <BigVideoContainer show={previewShow} /> : null}
                     </video>
                 </figure>
+                
                 <ul className="show-index">
                     {showRowList}
                 </ul>
 
                 <figure className="index-bg"></figure>
-            </main>
+
+            </section>
         );
     }
 }

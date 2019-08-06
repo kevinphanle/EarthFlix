@@ -4,11 +4,9 @@ import { withRouter } from 'react-router-dom';
 import Watch from './watch';
 
 const mapStateToProps = (state, ownProps) => {
-    const videoId = new URLSearchParams(ownProps.location.search).get("trackId");
-
-    const video = state.entities.videos[videoId];
-    const show = state.entities.shows[ownProps.match.params.showId]
-    debugger;
+    const video = state.entities.videos[ownProps.match.params.videoId];
+    const show = state.entities.shows[ownProps.match.params.showId];
+    // debugger;
     return {
         video,
         show

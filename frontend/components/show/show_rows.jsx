@@ -4,6 +4,20 @@ import ShowPreviewPlayer from './show_preview_player';
 class ShowRows extends React.Component {
     constructor(props) {
         super(props);
+        this.createShowRowItem = this.createShowRowItem.bind(this);
+    }
+
+    createShowRowItem(show) {
+        if (!show) {
+            return null;
+        }
+
+        const { rowNum, videos } = this.props;
+        // const previewVideo = videos[show.id];
+
+        return (
+            <ShowPreviewPlayer key={show.id} show={show}  />
+        )
     }
                     
     render () {
@@ -11,7 +25,7 @@ class ShowRows extends React.Component {
 
         const showList = [];
         shows.forEach(show => {
-            showList.push(<ShowPreviewPlayer key={show.id} show={show} />);
+            showList.push(this.createShowRowItem(show));
         });
 
         return (

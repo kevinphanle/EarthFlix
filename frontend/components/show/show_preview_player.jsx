@@ -8,7 +8,12 @@ class ShowPreviewPlayer extends React.Component {
             height: 0,
             mute: true,
         }
+
+        this.videoPlayer = React.createRef();
         this.watch = this.watch.bind(this);
+        this.playVideo = this.playVideo.bind(this);
+
+
     }
 
     componentDidMount() {
@@ -25,15 +30,30 @@ class ShowPreviewPlayer extends React.Component {
         // }
     }
 
+    playVideo() {
+        if (this.videoPlayer.current === null) {
+            return null;
+        }
+
+        const videoEl = this.videoPlayer.current;
+        this.videoTimeout = setTimeout(() => {
+            videoEl.play().then(() => {
+                this.setState({ paused: false });
+            })
+        }, 2000)
+    }
+
     render() {
         
         const { show } = this.props;
 
         return (
-            <section id="show-preview-wrapper" onClick={this.watch} > 
-                <img className="show-card" onClick={this.watch} src={show ? show.posterUrl : ""} alt=""/>
+            <section id="show-preview-wrapper" onClick={this.watch} onMouseEnter={this.playVideo} > 
+                
+                <img className="show-card" onClick={this.watch} src={show ? show.posterUrl : ""} alt={show.title} />
+                
                 <figure className="preview-video-player">
-                    <video id="preview-video" onClick={this.watch}>
+                    <video id="preview-video" ref={this.videoPlayer} onClick={this.watch}>
                         {/* <source src={show.videos.videoUrl} type="video/mp4" /> */}
                     </video>
                     <button onClick={this.clickPlay} className="preview-play-btn">

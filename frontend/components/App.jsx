@@ -14,18 +14,18 @@ import Watch from './watch/watch_container';
 const App = () => {
     return (
         <div>
-            <Switch>
-                <ProtectedRoute path="/browse" component={IndexNav} />
-                <AuthRoute exact path={["/", "/signup", "/login"]} component={Navbar} />
-            </Switch>
-
             <main className="main-content">
+                <Switch>
+                    <ProtectedRoute path="/browse" component={IndexNav} />
+                    <AuthRoute exact path={["/", "/signup", "/login"]} component={Navbar} />
+                </Switch>
 
                 <AuthRoute exact path="/" component={Splash} />
                 <AuthRoute path="/signup" component={SignupForm} />
                 <AuthRoute path="/login" component={LoginForm} />
+
                 <ProtectedRoute path="/browse" component={ShowIndex} />
-                <ProtectedRoute path="/watch/:showId/" component={Watch} />
+                <ProtectedRoute path="/watch/:showId" component={Watch} />
 
             </main>
 

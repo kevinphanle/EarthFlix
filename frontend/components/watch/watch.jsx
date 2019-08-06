@@ -35,8 +35,9 @@ class Watch extends React.Component {
     componentDidMount() {
         this._isMounted = true;
 
-        const { showId } = this.props.match.params;
+        const { showId, videoId } = this.props.match.params;
         this.props.fetchShow(showId);
+        this.props.fetchVideo(videoId);
 
         this.interval = setInterval(this._tick, 1000); //updates the timer each half second
     }

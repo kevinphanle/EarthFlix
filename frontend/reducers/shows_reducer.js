@@ -1,5 +1,5 @@
 import {
-    RECEIVE_ALL_SHOWS,
+    RECEIVE_SHOWS,
     RECEIVE_SHOW
 } from '../actions/show_actions';
 
@@ -7,11 +7,12 @@ import merge from 'lodash/merge';
 
 const showsReducer = (state = {}, action) => {
     Object.freeze(state);
+    // debugger;
     switch (action.type) {
-        case RECEIVE_ALL_SHOWS:
-            return action.shows
+        case RECEIVE_SHOWS:
+            return merge({}, action.shows);
         case RECEIVE_SHOW:
-            return merge({}, state, { [action.show.id]: action.show })
+            return merge({}, state, action.shows)
         default:
             return state;
     }
