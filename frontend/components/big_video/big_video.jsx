@@ -30,7 +30,7 @@ class BigVideo extends React.Component {
     this.setState({ buttons: true });
     setTimeout(() => {
       this.player.play();
-    }, 300);
+    }, 200);
   }
 
   handleMouseLeave(e) {
@@ -40,7 +40,7 @@ class BigVideo extends React.Component {
 
     setTimeout(() => {
       this.player.pause();
-    }, 400);
+    }, 200);
   }
 
   render() {

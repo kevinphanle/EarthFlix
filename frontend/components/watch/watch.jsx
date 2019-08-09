@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Player, ControlBar } from 'video-react';
+import { Player, ControlBar, LoadingSpinner } from 'video-react';
 
 
 class Watch extends React.Component {
@@ -41,18 +41,25 @@ class Watch extends React.Component {
                 <Player
                     ref={player => {
                         this.player = player;
-                        console.log(this.player);
+                        // console.log(this.player);
                     }}
                     width="100%"
-                    autoplay
+                    autoPlay
                     loop={true}
                     // muted={true}
                     load={true}
                     src={show.videoUrl}
+                    poster={show.posterUrl}
                 >
-
-                    <ControlBar autoHide />
+                    <LoadingSpinner/>
+                    <ControlBar autoHide={true} />
                 </Player>
+
+                <Link to='/browse'>
+                    <div className="show-watch-back-btn">
+                        <i className="fas fa-arrow-alt-circle-left"></i>
+                    </div>
+                </Link>
 
             </div>
         );

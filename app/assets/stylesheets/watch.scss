@@ -1,133 +1,38 @@
 .watch-video-container {
     position: relative;
     display: flex;
-    height: 100vh;
-    background: black;
-}
-
-.watch-video-container .controls-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 20px;
-    padding: 30px 30px;
-    height: 100%;
-    width: 100%;
-
-}
-
-.watch-video-container .hidden-controls {
-    height: 100%;
-    width: 100%;
-    /* background-color: rgba(0,0,0,0.2); */
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+    height: 100vh;
+    background: #141414;
+    width: 100%;
+
+    .video-react {
+        width: 100%;
+        height: 100%;
+    }
 }
 
-.watch-video-container .hidden-controls.hidden {
-    visibility: hidden;
-}
-
-.watch-video-container .hidden-controls a {
-    text-decoration: none;
-    display: flex;
-    align-items: flex-start;
+.show-watch-back-btn {
+    position: absolute;
     color: white;
-}
+    opacity: .3;
+    font-size: 40px;
+    top: 25px;
+    left: 50px;
+    border-radius: 100%;
+    z-index: 1;
 
-.watch-video-container .hidden-controls i {
-    font-size: 28px;
-    margin: 0 25px;
-    cursor: pointer;
-}
+    &:hover {
+        position: absolute;
+        color: white;
+        opacity: .9;
 
-.watch-video-container .hidden-controls .fa-volume-up {
-    margin: 0 20px;
-}
-
-.watch-video-container .player-controls {
-    color: white;
-    display: flex;
-    align-items: center;
-}
-
-.watch-video-container .bottom-controls {
-    width: 100%;
-}
-
-.bottom-controls .player-controls {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.player-controls .left-controls {
-    min-width: 60%;
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    font-weight: 700;
-    overflow: hidden;
-}
-
-.player-controls .left-controls span {
-    overflow: hidden;
-    white-space: pre;
-    margin-left: 25px;
-}
-
-.left-controls .volume-control {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
-
-.volume-control .volume-dropdown {
-    display: none;
-    -webkit-appearance: none;
-    height: 3px;
-    background-color: rgb(229, 9, 20);
-}
-
-.volume-control .volume-dropdown:focus {
-    display: initial;
-    outline: 0;
-}
-
-.volume-control:hover .volume-dropdown {
-    display: initial;
-}
-
-.player-controls .right-controls {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.play-bar {
-    max-width: 100%;
-}
-
-.play-bar .seek-bar {
-    width: 100%;
-    -webkit-appearance: none;
-    height: 5px;
-    background-color: rgb(85, 85, 85)
-}
-
-.play-bar .seek-bar::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: rgb(229, 9, 20)
-}
-
-.play-bar .seek-bar:focus {
-    outline: 0;
+        &:after {
+            content: 'back to browse';
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+    }
 }

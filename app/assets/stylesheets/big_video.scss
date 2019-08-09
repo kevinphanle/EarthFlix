@@ -14,6 +14,19 @@
     height: 100%;
 }
 
+.big-video-container .video-react .video-react-control-bar {
+        display: none;
+}
+
+.big-video-container .video-react .video-react-loading-spinner {
+     display: none;
+}
+
+.big-video-container .video-react {
+    width: 100%;
+    height: 100%;
+}
+
 .big-video-container .video-buttons {
     position: absolute;
     width: 100%;
@@ -26,7 +39,7 @@
     font-family: 'Montserrat', sans-serif;
     padding: 0 4%;
     padding-bottom: 15%;
-    background-image: linear-gradient(transparent, #141414);
+    // background-image: linear-gradient(transparent, #141414);
     // font-size: 40px;
     color: white;
 }
