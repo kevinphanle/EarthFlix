@@ -15,6 +15,7 @@
 .show-thumbnail-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     height: 200px;
     
@@ -24,8 +25,10 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100vw;
     height: 250px;
+    background-color: black;
 }
 
 .show_thumbnail {

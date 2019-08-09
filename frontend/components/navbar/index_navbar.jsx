@@ -31,8 +31,14 @@ class IndexNav extends React.Component {
                     </section>
 
                     <section className="right-nav">
-                        <section className="search-bar">
-
+                        <section className="search-bar-container">
+                            <div className="icon-div"><i className="fas fa-search"></i></div>
+                            <input
+                                className="search-bar"
+                                type="text"
+                                placeholder="Search for videos"
+                                
+                            />
                         </section>
 
                         <button onClick={this.handleLogout} className="logout-btn" >Log Out</button>

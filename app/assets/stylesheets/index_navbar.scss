@@ -53,6 +53,26 @@
     display: flex;
     position: relative;
     align-items: center;
+
+    .search-bar-container {
+        display: flex;
+        align-items: center;
+
+        .icon-div {
+            color: white;
+            size: 35px;
+            padding: 5px;
+        }
+
+        .search-bar {
+            color: white;
+            background: black;
+            padding: 7px;
+            border: none;
+            width: 200px;
+            height: 20px;
+        }
+    }
 }
 
 .logout-btn:hover {

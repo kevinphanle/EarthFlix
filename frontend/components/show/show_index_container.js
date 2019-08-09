@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
     // const shows = Object.keys(state.entities.shows).map(id => state.entities.shows[id]);
     const shows = Object.values(state.entities.shows);
     const genres = Object.values(state.entities.genres);
+    // const randomId = Object.keys(state.entities.shows)
     const firstShow = Object.values(state.entities.shows)[0];
     // debugger
     return {

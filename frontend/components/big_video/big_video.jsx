@@ -40,7 +40,7 @@ class BigVideo extends React.Component {
 
     setTimeout(() => {
       this.player.pause();
-    }, 200);
+    }, 400);
   }
 
   render() {
@@ -51,15 +51,8 @@ class BigVideo extends React.Component {
     // debugger;
     return (
       <div className="big-video-wrapper">
-        <figure className="big-video-filter" />
-            {/* <figure className="big-video-bg" /> */}
-            {/* <section className="big-video-poster" >
-                <img src={show.posterUrl}
-                    className={`preview-poster`}
-                    
-                ></img>
-                <figure className={`poster-black-bg`}></figure>
-            </section> */}
+        {/* <figure className="big-video-filter" /> */}
+        {/* <figure className="big-video-bg"></figure> */}
         <div
           className="big-video-container"
           id="big-video"
@@ -68,12 +61,14 @@ class BigVideo extends React.Component {
         >
           <Player
             ref={player => (this.player = player)}
-            width="100%"
-            autoplay={true}
+            // width="100%"
+                    poster={show.posterUrl}
+            autoPlay
             loop={true}
             muted={true}
             load={true}
-            src={show.videoUrl}
+                    src={show.videoUrl}
+                    style="none"
           />
 
           {this.state.buttons ? (
@@ -84,7 +79,8 @@ class BigVideo extends React.Component {
                 <span>
                   <Link className="link-button" to={`/watch/${show.id}`}>
                     <button>
-                      <i className="fas fa-play">Play</i>
+                        <i className="fas fa-play"></i>
+                        
                     </button>
                   </Link>
                 </span>

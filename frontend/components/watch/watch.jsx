@@ -13,7 +13,7 @@ class Watch extends React.Component {
     componentDidMount() {
         // debugger;
         this.props.fetchShow(this.props.match.params.showId);
-        // this.player.subscribeToStateChange(this.handleStateChange.bind(this));
+        this.player.subscribeToStateChange(this.handleStateChange.bind(this));
         // this.player.play();
     }
     
@@ -43,13 +43,14 @@ class Watch extends React.Component {
                         this.player = player;
                         // console.log(this.player);
                     }}
-                    width="100%"
+                    // width="100%"
                     autoPlay
                     loop={true}
                     // muted={true}
                     load={true}
                     src={show.videoUrl}
                     poster={show.posterUrl}
+                    fluid={true}
                 >
                     <LoadingSpinner/>
                     <ControlBar autoHide={true} />
