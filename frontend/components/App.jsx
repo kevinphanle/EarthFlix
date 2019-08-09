@@ -13,7 +13,7 @@ import Watch from './watch/watch_container';
 
 const App = () => {
     return (
-        <div>
+        <>
             <main className="main-content">
                 <Switch>
                     <ProtectedRoute path="/browse" component={IndexNav} />
@@ -30,7 +30,7 @@ const App = () => {
             </main>
 
             <AuthRoute path="/" component={footer}/>
-        </div>
+        </>
 
     )
 };

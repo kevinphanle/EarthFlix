@@ -1,21 +1,17 @@
 import { connect } from 'react-redux';
-import { fetchVideo } from '../../actions/show_actions';
+import { fetchVideo, fetchShow } from '../../actions/show_actions';
 import BigVideo from './big_video';
 
 const mapStateToProps = (state, ownProps) => {
-    const { show } = ownProps;
-
-    const previewId = show.show_type === 'MOVIE' ? show.movie_id : show.episode_ids[0];
-    const previewVideo = state.entities.videos[previewId] || null;
-    // debugger;
+    // debugger
     return {
-        video: previewVideo,
-        previewId
+        show: ownProps.show
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-    requestVideo: id => dispatch(fetchVideo(id))
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    // requestVideo: id => dispatch(fetchVideo(id)),
+    fetchShow: () => dispatch(fetchShow(ownProps.showId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BigVideo);

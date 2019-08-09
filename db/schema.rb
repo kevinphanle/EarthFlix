@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_201237) do
+ActiveRecord::Schema.define(version: 2019_08_08_201110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(version: 2019_08_06_201237) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_genres_on_name", unique: true
+  end
+
   create_table "movies", force: :cascade do |t|
     t.integer "video_id", null: false
     t.string "name", null: false
@@ -44,11 +51,13 @@ ActiveRecord::Schema.define(version: 2019_08_06_201237) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "show_videos", force: :cascade do |t|
-    t.integer "show_id", null: false
-    t.integer "video_id", null: false
+  create_table "show_genres", force: :cascade do |t|
+    t.bigint "show_id"
+    t.bigint "genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_show_genres_on_genre_id"
+    t.index ["show_id"], name: "index_show_genres_on_show_id"
   end
 
   create_table "shows", force: :cascade do |t|
@@ -82,4 +91,6 @@ ActiveRecord::Schema.define(version: 2019_08_06_201237) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "show_genres", "genres"
+  add_foreign_key "show_genres", "shows"
 end

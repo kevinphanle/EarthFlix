@@ -1,0 +1,117 @@
+.big-video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212020;
+    position: relative;
+    height: 60vh;
+}
+
+.big-video-container {
+    width: 100%;
+    background-color: #212020;
+    // height: 75vh;
+    height: 100%;
+}
+
+.big-video-container .video-buttons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 4%;
+    padding-bottom: 15%;
+    background-image: linear-gradient(transparent, #141414);
+    // font-size: 40px;
+    color: white;
+}
+
+.big-video-container .controls-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40%;
+    position: relative;
+
+    .link-button button {
+        background-color: rgba(51,51,51,.4);
+        border-radius: 3px;
+        font-size: 14px;
+        font-weight: 700;
+        border-style: none;
+        color: white;
+        padding: 10px 30px;
+        
+        &:hover {
+            background-color: white;
+            color: black;
+            border-bottom: 3px;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+        font-weight: 600px;
+        margin: 10px 0 5px;
+    }
+}
+
+.big-video-container .controls-right {
+    font-size: 14px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    
+    span {
+        height: 100%;
+        background-color: rgba(51,51,51,.6);
+        border-left: solid white 3px;
+        padding: 6px 40px 6px 10px;
+        margin-right: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
+.big-video-filter {
+    width: 100%;
+    max-width: 100vw;
+    // height: ;
+    max-height: 90vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 81;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4) 20%, rgba(0, 0, 0, 0.1)60%);
+}
+
+.big-video-bg {
+    width: 100%;
+    height: 100vh;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0) 100%);
+    background-color: black;
+}
+
+
+// .video-react .video-react-video {
+//     width: 1600px;
+//     height: 500px;
+// }

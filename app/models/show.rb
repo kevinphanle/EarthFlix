@@ -14,27 +14,20 @@
 
 class Show < ApplicationRecord
 
-    SHOW_TYPES = %w(MOVIE SERIES)
+    validates :year, :description, :rating, presence: true
+    validates :title, presence: true, uniqueness: true
 
-    validates :title, :year, :description, presence: true
-    validates :show_type, presence: true, inclusion: { in: SHOW_TYPES }
+    has_many :show_genres,
+    foreign_key: :show_id,
+    class_name: :ShowGenre
+    
+    has_many :genres,
+        through: :show_genres,
+        source: :genre,
+        dependent: :destroy
 
-    has_many :show_videos
-
-    has_many :videos
 
     has_one_attached :poster_file
+    has_one_attached :video_file
     
-    def preview_id 
-        self.videos.each { |video| return video.id if video.video_type == "EPISODE"}
-    end
-
-
-    def movie_id
-        self.videos.each { |video| return video.id if video.video_type == "MOVIE"}
-    end
-
-    def episode_ids
-        self.videos.map  { |video| video.id if video.video_type == "EPISODE" }
-    end 
 end

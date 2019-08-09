@@ -1,49 +1,62 @@
-.show-index-wrapper {
-    position: relative;
-    width: 100%;
-    min-height: 1000px;
-}
-
-.big-video-preview {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #212020;
-    height: 80vh;
-}
-
-.big-video-poster {
+body {
     height: 100%;
-    width: 100%;
-    max-width: 100vw;
-    position: absolute;
-    z-index: 20;
-    border: none;
+    // background: #141414;
 }
 
-.show-index {
+html {
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.main-content {
+    height: 100%;
+    // background-color: #141414;
+}
+
+.index-container {
+    background: #141414;
+    width: 100vw;
+    height: 100%;
+
+}
+
+
+
+.genre-rows {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: auto;
-    overflow-x: hidden;
-    padding-bottom: 5vh;
-    margin-bottom: 10vh;
-    background: linear-gradient( to top, rgba(20, 20, 20, 1) 95%, rgba(20, 20, 20, 0) 100%);
-
-    &::-webkit-scrollbar {
-        width: 0;
-    }
 }
 
-.index-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+.genre-container {
+    position: relative;
     width: 100%;
-    height: 100%;
-    background-color: rgb(33, 32, 32);
-    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 95%);
-    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 95%);
+    overflow: hidden;
+}
+
+.genre-title {
+    position: relative;
+    width: 100px;
+    font-size: 30px;
+    color: white;
+    justify-content: left;
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
+    margin: 30px 0 0 30px;
+}
+
+.frontVideo {
+    width: 100%;
 }

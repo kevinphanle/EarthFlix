@@ -1,6 +1,6 @@
 import React from "react";
-import ShowRows from './show_rows';
-import BigVideoContainer from '../big_video/big_video_container';
+import BigVideo from '../big_video/big_video_container';
+import GenreRow from "./genre_row_container";
 
                     
 class ShowIndex extends React.Component {
@@ -8,16 +8,22 @@ class ShowIndex extends React.Component {
         super(props);
 
         this.state = {
-            currentGenre: null,
-            muted: true,
-            currentShow: null,
+         
         }
+        this.handleStateChange = this.handleStateChange.bind(this);
     }
 
     componentDidMount() {
-        this.props.requestAllShows().then((dispatchedAction) => this.setState({ currentShow: Math.floor(Math.random() * Object.keys(dispatchedAction.shows).length) }));
-        // const showsPerRow = this.makeRows();
+        this.props.fetchShows();
+        this.props.fetchGenres();
+    }
 
+   
+
+    handleStateChange(state, prevState) {
+        this.setState({
+            player: state
+        })
     }
 
     makeRows() {
@@ -25,7 +31,6 @@ class ShowIndex extends React.Component {
         let row = [];
         let showsPerRow = {};
         let numRows = 0;
-
         for (let i = 0; i < shows.length; i++) {
             const currentShow = shows[i];
             row.push(currentShow);
@@ -43,37 +48,34 @@ class ShowIndex extends React.Component {
         return showsPerRow;
     }
 
-    render () {
-
-        const { shows, videos } = this.props;
-        let previewShow = null, showsPerRow = null, showRowList = [];
-        showsPerRow = this.makeRows();
-        previewShow = shows[0]
+    render() {
+        const { shows, genres, firstShow } = this.props;
+        if (!firstShow) {
+            return null;
+        }
         // debugger;
-
-        showRowList = Object.keys(showsPerRow).map((rowShow, i) => {
-            // debugger;
-            return (<ShowRows key={i} rowNumber={i} shows={showsPerRow[rowShow]} videos={videos} />);
-            
-        });
-
+        const genreRows = genres.map((genre) => {
+            return <GenreRow 
+                key={genre.id} 
+                genre={genre}
+                name={genre.name} 
+                id={genre.id} 
+                shows={genre.showIds.map(showId => this.props.shows[showId])} 
+                // shows={this.props.shows}
+            /> 
+        })
+        // debugger;
         return (
-            <section className="show-index-wrapper">
+            <div className="index-container">
+                <div className="frontVideo">
+                    <BigVideo show={firstShow}/>
 
-                <figure className="big-video-preview">
-                    <img src="" alt="" className="big-video-poster" />
-                    <video autoPlay className="big-video">
-                        {previewShow ? <BigVideoContainer show={previewShow} /> : null}
-                    </video>
-                </figure>
-                
-                <ul className="show-index">
-                    {showRowList}
-                </ul>
-
-                <figure className="index-bg"></figure>
-
-            </section>
+                </div>
+                <div className="genre-rows">
+                    {genreRows}
+                    <br/>
+                </div>
+            </div>
         );
     }
 }

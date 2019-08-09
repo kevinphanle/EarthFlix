@@ -1,3 +1,47 @@
 // Place all the styles related to the api/shows controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'video-react/styles/scss/video-react';
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.5);
+    z-index: 300;
+}
+
+.show-thumbnail-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 200px;
+    
+}
+
+.show-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 250px;
+}
+
+.show_thumbnail {
+    padding: 5px;
+    
+}
+
+.video-react .video-react-control-bar {
+    display: none;
+}
+
+.video-react .video-react-big-play-button,
+.video-react .video-react-big-play-button-left {
+    display: none;
+}
+
+.video-react .video-react-loading-spinner {
+    display: none;
+}
