@@ -9,5 +9,9 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :show]
     resources :show_genres, only: [:index]
     resources :shows, only: [:index, :show]
+    resources :my_lists, only: [:create, :destroy]
+    resources :search, only: [:index]
+    resources :profiles, only: [:create, :show, :update, :destroy, :index]
+
   end
 end
