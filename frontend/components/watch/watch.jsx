@@ -6,7 +6,6 @@ import { Player, ControlBar, LoadingSpinner } from 'video-react';
 class Watch extends React.Component {
     constructor(props) {
         super(props);
-        
 
     }
 

@@ -27,9 +27,9 @@ const App = () => {
                 <ProtectedRoute path="/browse" component={ShowIndex} />
                 <ProtectedRoute path="/watch/:showId" component={Watch} />
 
+                <AuthRoute exact path={["/", "/browse"]} component={footer}/>
             </main>
 
-            <AuthRoute path="/" component={footer}/>
         </>
 
     )
