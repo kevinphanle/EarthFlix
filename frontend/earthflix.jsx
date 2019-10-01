@@ -4,10 +4,6 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 
-import { fetchShows } from './actions/show_actions';
-import { fetchGenres } from './actions/genre_actions';
-import { logout } from './actions/session_actions';
-
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
     let store;
@@ -28,9 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.fetchShows = fetchShows;
-    window.fetchGenres = fetchGenres;
-    window.logout = logout;
+
 
     ReactDOM.render(<Root store={store}/>, root);
 });

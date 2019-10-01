@@ -26,6 +26,10 @@ class Show < ApplicationRecord
         source: :genre,
         dependent: :destroy
 
+    has_many :my_lists,
+    foreign_key: :show_id,
+    className: :MyList
+
 
     has_one_attached :poster_file
     has_one_attached :video_file
