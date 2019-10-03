@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Search from './search_container';
 
 class IndexNav extends React.Component {
     constructor(props) {
@@ -28,15 +29,7 @@ class IndexNav extends React.Component {
                     </section>
 
                     <section className="right-nav">
-                        <section className="search-bar-container">
-                            <div className="icon-div"><i className="fas fa-search"></i></div>
-                            <input
-                                className="search-bar"
-                                type="text"
-                                placeholder="Search for videos"
-                                
-                            />
-                        </section>
+                        <Search/>
 
                         <button onClick={this.handleLogout} className="logout-btn" >Log Out</button>
                     </section>

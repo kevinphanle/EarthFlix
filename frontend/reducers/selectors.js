@@ -37,6 +37,7 @@ export const myListsShows = (state) => {
 
 export const searchResultShows = state => {
     let videos = [];
+    console.log(state);
     state.entities.searchResults.forEach( showId => {
         videos.push(state.entities.shows[showId]);
     })

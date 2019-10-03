@@ -10,6 +10,7 @@ import footer from './footer/footer';
 import ShowIndex from './show/show_index_container';
 import IndexNav from './navbar/index_navbar_container';
 import Watch from './watch/watch_container';
+import search_index_container from './search/search_index_container';
 
 const App = () => {
     return (
@@ -26,6 +27,7 @@ const App = () => {
 
                 <ProtectedRoute path="/browse" component={ShowIndex} />
                 <ProtectedRoute path="/watch/:showId" component={Watch} />
+                <ProtectedRoute path="/search" component={search_index_container} />
 
                 <AuthRoute exact path={["/", "/browse"]} component={footer}/>
             </main>

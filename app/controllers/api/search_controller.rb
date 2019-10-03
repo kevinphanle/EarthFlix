@@ -12,7 +12,7 @@ class Api::SearchController < ApplicationController
       render :index
   end
 
-private
+  private
   def search_params
       params.require(:search).permit(:input)
   end

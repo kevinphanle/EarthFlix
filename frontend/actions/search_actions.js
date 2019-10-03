@@ -13,5 +13,5 @@ export const clearSearchResults = () => ({
 })
 
 export const fetchSearchResults = input => dispatch => (
-  searchApiUtil.fetchSearchResults(input).then(  results => dispatch(receiveSearchResults(results)))
+  searchAPIUtil.fetchSearchResults(input).then(results => dispatch(receiveSearchResults(results)))
 )

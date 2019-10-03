@@ -7,6 +7,7 @@ const searchReducer = (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_SEARCH_RESULTS:
       newState = Object.keys(action.results);
+      console.log(newState);
       return newState;
     case CLEAR_SEARCH_RESULTS:
       return [];

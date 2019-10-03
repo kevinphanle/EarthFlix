@@ -28,7 +28,7 @@ class Show < ApplicationRecord
 
     has_many :my_lists,
     foreign_key: :show_id,
-    className: :MyList
+    class_name: :MyList
 
 
     has_one_attached :poster_file
