@@ -7,9 +7,9 @@ const mapStateToProps = (state, ownProps) => {
     // const shows = Object.values(ownProps.shows);
     
     return {
-        genre: ownProps.genre,
-        // shows: Object.values(ownProps.shows).filter(show => ownProps.genre.showIds.includes(show.id))
-        shows: ownProps.genre.showIds.map(showId => state.entities.shows[showId])
+        genre: ownProps.genre ? ownProps.genre : "Results",
+        shows: ownProps.genre ? ownProps.genre.showIds.map(showId => state.entities.shows[showId]) : ownProps.myListShows
+        // shows: ownProps.
     }
 }
 

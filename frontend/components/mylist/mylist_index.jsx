@@ -37,6 +37,7 @@ class MyListIndex extends React.Component {
       )
       container = [];
     }
+    console.log(rows);
 
     return (
       <div className="index-container">
