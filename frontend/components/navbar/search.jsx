@@ -104,7 +104,6 @@ class Search extends React.Component {
     let search = this.state.active ? expanded : compressed;
 
     let containerState = this.state.active ? "search_container active_search" : "search_container";
-    console.log(this.props);
 
     return (
       <div className={containerState}>

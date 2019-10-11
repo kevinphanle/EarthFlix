@@ -18,7 +18,6 @@ const showsReducer = (state = {}, action) => {
         case RECEIVE_GENRE: 
             return merge({}, state, action.payload.shows);
         case RECEIVE_SEARCH_RESULTS:
-            console.log(action)
             return merge({}, state, action.results);
         default:
             return state;

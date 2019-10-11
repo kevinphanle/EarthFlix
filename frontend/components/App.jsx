@@ -11,6 +11,7 @@ import ShowIndex from './show/show_index_container';
 import IndexNav from './navbar/index_navbar_container';
 import Watch from './watch/watch_container';
 import search_index_container from './search/search_index_container';
+import MyListIndex from './mylist/mylist_index_container';
 
 const App = () => {
     return (
@@ -25,6 +26,7 @@ const App = () => {
                 <AuthRoute path="/signup" component={SignupForm} />
                 <AuthRoute path="/login" component={LoginForm} />
 
+                <ProtectedRoute path="/browse/my-list" component={MyListIndex}/>
                 <ProtectedRoute path="/browse" component={ShowIndex} />
                 <ProtectedRoute path="/watch/:showId" component={Watch} />
                 <ProtectedRoute path="/search" component={search_index_container} />

@@ -47,7 +47,7 @@ class GenreRow extends React.Component {
         return (
             <div className="genre-container">
 
-                <h2 className="genre-title">{genre.name}</h2>
+                <h2 className="genre-title">{genre ? genre.name : ""}</h2>
                 <div
                     className="show-thumbnail-container"
                     onPointerEnter={() => this.setState({ hovered: true })}
