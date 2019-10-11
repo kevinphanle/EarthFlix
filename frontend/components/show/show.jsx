@@ -43,6 +43,17 @@ class Show extends React.Component {
         this.player.load();
     }
 
+    addToMyList() {
+        this.props.createMyList({
+            profile_id: this.props.profileId,
+            show_id: this.props.show.id,
+        });
+    }
+
+    removeFromMyList() {
+        this.props.deleteMyList(this.props.myList.id);
+    }
+
     render() {
         const { show } = this.props;
         const { width, height, source, autoplay, showButtons } = this.state;

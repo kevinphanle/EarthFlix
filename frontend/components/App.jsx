@@ -26,9 +26,9 @@ const App = () => {
                 <AuthRoute path="/signup" component={SignupForm} />
                 <AuthRoute path="/login" component={LoginForm} />
 
-                <ProtectedRoute path="/browse/my-list" component={MyListIndex}/>
-                <ProtectedRoute path="/browse" component={ShowIndex} />
+                <ProtectedRoute exact path="/browse" component={ShowIndex} />
                 <ProtectedRoute path="/watch/:showId" component={Watch} />
+                <ProtectedRoute exact path="/browse/my-list" component={MyListIndex}/>
                 <ProtectedRoute path="/search" component={search_index_container} />
 
                 <AuthRoute exact path={["/", "/browse"]} component={footer}/>
