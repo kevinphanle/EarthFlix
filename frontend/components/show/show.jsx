@@ -61,6 +61,7 @@ class Show extends React.Component {
                         src={source}
                         width={width}
                         height={height}
+                        style="background-size: cover;"
                     >
                     <ControlBar></ControlBar>
                     

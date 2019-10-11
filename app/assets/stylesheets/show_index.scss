@@ -39,13 +39,16 @@ html {
 .genre-rows {
     display: flex;
     flex-direction: column;
+    width: 95%;
+    margin: auto;
+
 }
 
 .genre-container {
     position: relative;
     width: 100%;
     overflow: hidden;
-
+    padding: 30px 0;
 
 }
 
@@ -56,7 +59,7 @@ html {
     color: white;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
-    margin: 30px 0 0 30px;
+    margin-bottom: 10px;
     z-index: 15;
     
     text-transform: uppercase;

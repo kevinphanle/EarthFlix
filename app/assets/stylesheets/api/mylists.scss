@@ -1,3 +1,15 @@
 // Place all the styles related to the api/mylists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mylist-container {
+  padding-top: 100px;
+  width: 95%;
+  margin: auto;
+}
+
+.mylist-index-title {
+  color: white;
+  font-family: "Montserrat", "sans serif";
+  font-size: 30px;
+}

@@ -24,24 +24,30 @@ class MyListIndex extends React.Component {
     let rowActive;
     let title = pageType === "myList" ? "My List" : "Search Results";
 
+  
+
     for (let i = 0; i < shows.length; i++) {
-      container.push(shows[i]);
-      let rowIdx = Math.floor(i / 5);
-      rowActive = (this.state.open && (rowIdx === this.state.activeRowIndex));
-      rows.push(
-      )
-      container = [];
+      container.push(shows[i])
+      if (container.length === 5) {
+        let rowIdx = Math.floor(i/5);
+        rowActive = (this.state.open && (rowIdx === this.state.activeRowIdx));
+        rows.push(<GenreRow myListShows={container} key={i} pageType={pageType}
+            rowActive={rowActive} handleActiveRow={()=>this.handleActiveRow(rowIdx)}/>)
+        container = [];
+      }
+      else if (i === shows.length - 1) {
+          let rowIdx = Math.floor(i / 5);
+          rowActive = (this.state.open && (rowIdx === this.state.activeRowIdx));
+          rows.push(<GenreRow myListShows={container} key={i} pageType={pageType}
+              rowActive={rowActive} handleActiveRow={() => this.handleActiveRow(rowIdx)} />)
+          container = [];
+      }
     }
 
     return (
-      <div className="index-container">
-        <div className="myList_index_title">{title}</div>
-        <GenreRow
-        myListShows={shows}
-        // key={i}
-        pageType={pageType}
-        rowActive={rowActive}
-        handleActiveRow={() => this.handleActiveRow(rowIdx)} />
+      <div className="mylist-container">
+        <div className="mylist-index-title">{title}</div>
+        {rows}
       </div>
     );
   }

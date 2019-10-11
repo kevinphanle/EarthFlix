@@ -4,12 +4,14 @@
 @import 'video-react/styles/scss/video-react';
 
 .grow {
-    transition: all .2s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
 .grow:hover {
-    transform: scale(1.5);
+    transform: scale(1.3);
     z-index: 300;
+    border: 1px solid white;
+    padding: 0;
 }
 
 .show-thumbnail-container {
@@ -17,7 +19,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    // height: 200px;
     
 }
 
@@ -25,14 +27,14 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100vw;
-    height: 250px;
-    background-color: black;
+    // height: 250px;
+    background-color: #141414;
 }
 
 .show_thumbnail {
-    padding: 5px;
+    padding-right: 10px;
     
 }
 
@@ -48,3 +50,7 @@
 // .video-react .video-react-loading-spinner {
 //     display: none;
 // }
+
+.video-react-poster, .video-react {
+    background-size: cover !important;
+}
