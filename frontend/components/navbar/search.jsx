@@ -95,15 +95,16 @@ class Search extends React.Component {
             onChange={this.update('input')}
             className="search-form-input"
             onKeyUp={e => this.search(e.target.value)}
+            autoFocus
           />
-          <button className="search-input-clear-btn" onClick={this.handleClear}>Clear</button>
+          <button className="search-input-clear-btn" onClick={this.handleClear}><i className="fas fa-times"></i></button>
         </form>
       </div>
-    let compressed = <button onClick={this.handleExpand} className="search_button"><i className="fas fa-search"></i></button>
+    let compressed = <button onClick={this.handleExpand} className="search-button"><i className="fas fa-search"></i></button>
 
     let search = this.state.active ? expanded : compressed;
 
-    let containerState = this.state.active ? "search_container active_search" : "search_container";
+    let containerState = this.state.active ? "search-container active-search" : "search-container";
 
     return (
       <div className={containerState}>

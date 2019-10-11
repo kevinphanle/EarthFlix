@@ -52,30 +52,66 @@
 .right-nav {
     margin-right: 50px;
     display: flex;
-    position: relative;
     align-items: center;
 
-    .search-bar-container {
+    .search-container {
         display: flex;
         align-items: center;
+        transition: all 1s;
 
-        .icon-div {
-            color: white;
-            size: 35px;
-            padding: 5px;
+        .search-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+
+            i {
+                color: white;
+                font-size: 20px;
+                align-items: center;
+            }
         }
 
-        .search-bar {
+        .search-box {
             color: white;
-            background: black;
-            padding: 7px;
-            border: none;
-            width: 200px;
-            height: 20px;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid white;
+
+            .search-form {
+                width: 100%;
+                display: flex;
+                justify-content: space-evenly;
+
+                .search-form-input {
+                    background-color: transparent;
+                    color: white;
+                    border: none;
+                    font-size: 20px;
+                    
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                .search-input-clear-btn {
+                    border: none;
+                    background: transparent;
+                    color: white;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
         }
     }
 }
 
 .logout-btn:hover {
-    background-color: blue;
+    background-color: dodgerblue;
 }

@@ -18,8 +18,8 @@ const App = () => {
         <>
             <main className="main-content">
                 <Switch>
-                    <ProtectedRoute path="/browse" component={IndexNav} />
                     <AuthRoute exact path={["/", "/signup", "/login"]} component={Navbar} />
+                    <ProtectedRoute path={["/browse", "/search"]} component={IndexNav} />
                 </Switch>
 
                 <AuthRoute exact path="/" component={Splash} />

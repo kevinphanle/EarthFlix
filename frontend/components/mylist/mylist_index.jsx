@@ -28,12 +28,7 @@ class MyListIndex extends React.Component {
       container.push(shows[i]);
       let rowIdx = Math.floor(i / 5);
       rowActive = (this.state.open && (rowIdx === this.state.activeRowIndex));
-      rows.push(<GenreRow
-        myListShows={container}
-        key={i}
-        pageType={pageType}
-        rowActive={rowActive}
-        handleActiveRow={() => this.handleActiveRow(rowIdx)} />
+      rows.push(
       )
       container = [];
     }
@@ -41,7 +36,12 @@ class MyListIndex extends React.Component {
     return (
       <div className="index-container">
         <div className="myList_index_title">{title}</div>
-        {rows}
+        <GenreRow
+        myListShows={shows}
+        // key={i}
+        pageType={pageType}
+        rowActive={rowActive}
+        handleActiveRow={() => this.handleActiveRow(rowIdx)} />
       </div>
     );
   }
