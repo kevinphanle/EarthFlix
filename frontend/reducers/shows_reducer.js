@@ -4,6 +4,7 @@ import {
 } from '../actions/show_actions';
 import { RECEIVE_SEARCH_RESULTS } from '../actions/search_actions';
 import { RECEIVE_GENRE } from '../actions/genre_actions';
+import { RECEIVE_PROFILE } from '../actions/profile_actions';
 
 import merge from 'lodash/merge';
 
@@ -17,6 +18,8 @@ const showsReducer = (state = {}, action) => {
             return merge({}, state, { [action.show.id]: action.show })
         case RECEIVE_GENRE: 
             return merge({}, state, action.payload.shows);
+        case RECEIVE_PROFILE:
+            return merge({}, oldState, action.payload.listedMedia);
         case RECEIVE_SEARCH_RESULTS:
             return merge({}, state, action.results);
         default:

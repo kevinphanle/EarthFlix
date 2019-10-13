@@ -6,10 +6,39 @@ class IndexNav extends React.Component {
     constructor(props) {
         super(props);
         this.handleLogout = this.handleLogout.bind(this);
+        this.storeScroll = this.storeScroll.bind(this);
+    }
+
+    debounce(fn) {
+        let frame;
+        return (...params) => {
+            if (frame) {
+                cancelAnimationFrame(frame);
+            }
+            frame = requestAnimationFrame(() => {
+                fn(...params);
+            });
+        }
     }
 
     handleLogout() {
-        this.props.logout().then(() => this.props.history.push('/'));
+        this.props.unsetCurrentProfile(this.props.currentProfileId).then(this.props.logout().then(() => this.props.history.push('/')));
+    }
+
+    storeScroll() {
+        document.documentElement.dataset.scroll = window.scrollY ? window.scrollY : 0;
+    }
+
+    componentDidMount() {
+        if (this.props.currentUser) {
+            document.addEventListener('scroll', this.debounce(this.storeScroll), { passive: true });
+            this.storeScroll();
+            this.props.fetchProfile(this.props.currentProfileId);
+        }
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('scroll', this.debounce(this.storeScroll), { passive: true });
     }
 
     render() {

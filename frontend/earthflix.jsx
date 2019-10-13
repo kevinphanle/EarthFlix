@@ -15,8 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             session: { id: window.currentUser.id }
         };
+
+        if (window.currentProfile) {
+            preloadedState["ui"] = {};
+            preloadedState["ui"]["currentProfileId"] = window.currentProfile.id
+        }
+
         store = configureStore(preloadedState);
         delete window.currentUser;
+        if (window.currentProfile) {
+            delete window.currentProfile;
+        }
     } else {
         store = configureStore();
     }

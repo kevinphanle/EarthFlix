@@ -11,6 +11,7 @@ class LoginForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleGuestLogin = this.handleGuestLogin.bind(this);
+        this.initLogin = this.initLogin.bind(this);
     }
 
     handleSubmit(e) {
@@ -20,10 +21,31 @@ class LoginForm extends React.Component {
         this.props.login(user).then(() => this.props.history.push('/browse'))
     }
 
+    initLogin(event) {
+        event.preventDefault();
+        const email = "guest@guest.com";
+        const password = "password";
+    
+        email.split("").forEach((char, emailIndex) => {
+          setTimeout(() => {
+            this.setState({ email: this.state.email + char });
+          }, emailIndex * 50);
+    
+          if (emailIndex === email.length - 1)
+            password.split("").forEach((char, passwordIndex) => {
+              setTimeout(() => {
+                this.setState({ password: this.state.password + char }, () => {
+                  if (passwordIndex === password.length - 1) this.props.login(this.state);
+                });
+              }, passwordIndex * 50 + emailIndex * 50);
+            });
+        });
+      }
+
     handleGuestLogin(e) {
         e.preventDefault();
-        const guest = { email: 'guest@guest.com', password: 'password' };
-        this.props.login(guest).then(() => this.props.history.push('/browse'));
+        this.initLogin(e);
+        // this.props.login(this.state).then(() => this.props.history.push('/browse'));
     }
 
 

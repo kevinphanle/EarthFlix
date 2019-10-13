@@ -42,3 +42,16 @@ export const searchResultShows = state => {
     })
     return videos;
 }
+
+const thumbnails = [
+    "https://earthflix-dev.s3-us-west-1.amazonaws.com/profiles/capt.png",
+    "https://earthflix-dev.s3-us-west-1.amazonaws.com/profiles/chicken.png",
+    "https://earthflix-dev.s3-us-west-1.amazonaws.com/profiles/cop.png",
+    "https://earthflix-dev.s3-us-west-1.amazonaws.com/profiles/girl.png",
+    "https://earthflix-dev.s3-us-west-1.amazonaws.com/profiles/panda.png",
+    "https://earthflix-dev.s3-us-west-1.amazonaws.com/profiles/penguin.png"
+]
+
+export const randomProfileThumbnail = () => {
+    return thumbnails[Math.floor(Math.random() * thumbnails.length)]
+}
