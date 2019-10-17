@@ -49,16 +49,15 @@
 .show-drop-down {
     display: flex;
     height: 25%;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.584));
     z-index: 2;
     bottom: 0vw;
     position: absolute;
     width: 100%;
-    // background:none;
+    background: none;
     border:none;
+    color: whitesmoke;
     
     i {
         font-size: 1.8vw;
@@ -95,25 +94,35 @@
     display: none;
     position: absolute;
     right: 0;
-    bottom: 8.35vw;
+    bottom: 3vw;
     padding-right: 5%;
     font-size: 1.7vw;
     height: 2vw;
     width: 2vw;
     transition: font-size 1s;
-    top: 2.5vw;
 
     button {
         height: 100%;
         width: 100%;
+        border: none;
+        background: transparent;
+        border-radius: 100%;
+        color: whitesmoke;
+        text-align: center;
+        font-size: 1.5vw;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     
 }
 
 .myList-container:hover i {
-    font-size: 1.85vw;
+    font-size: 2vw;
     transition: font-size .3s;
+    cursor: pointer;
 }
 
 .myList-container:hover .mylist-status-dropdown {
@@ -156,11 +165,12 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    font-family: 'Montserrat', 'sans serif';
 
     .b {
         width: 100%;
         background-color: transparent;
-        height: 75%;
+        height: 100%;
         margin: 0;
         z-index: 2;
 
@@ -168,6 +178,7 @@
             width: 100%;
             height: 100%;
             cursor: pointer;
+            text-decoration: none;
 
 
             .dark-overlay {
@@ -190,21 +201,25 @@
                     padding: 0 5%;
                     box-sizing: border-box;
                     opacity: 1;
+                    text-decoration: none !important;
 
                     .show-play-btn {
                         display: flex;
                         margin-bottom: 0.5vw;
                         margin-top: 2.5vw;
+                        font-size: 2vw;
+                        color: whitesmoke;
                     }
 
                     .show-title {
-                        color: white;
+                        color: whitesmoke;
                         text-decoration: none;
-                        font-size: 1.5vw;
+                        font-size: 1.3vw;
                         font-weight: 600;
                         margin-bottom: 0.5vw;
                         background: rgba(0, 0, 0, 0.15);
                         border-radius: 1px;
+                        letter-spacing: .1vw;
                     }
 
                     .show-overlay-details {
@@ -218,10 +233,14 @@
                         .show-item-rating {
                             width: 3vw;
                             border: 1px solid whitesmoke;
-                            font-size: 0.7vw;
+                            font-size: 1vw;
                             text-align: center;
                             font-weight: 600;
                             border-radius: 1px;
+                            text-decoration: none;
+                            color: white;
+                            padding: .1vw;
+                            
                         }
                     }
                 }

@@ -62,14 +62,14 @@ class Show extends React.Component {
 
         let addShow = <button onClick={this.addToMyList}>
                 <div className="mylist-button">
-                    <i className="far fa-plus-circle"></i>
+                    <i className="fas fa-plus-circle"></i>
                     <div className="mylist-status-dropdown">ADD TO MY LIST</div>
                 </div>
           
         </button>
         let removeShow = <button onClick={this.removeFromMyList}>
                 <div className="mylist-button">
-                    <i className="far fa-check-circle"></i>
+                    <i className="fas fa-check-circle"></i>
                     <div className="mylist-status-dropdown">REMOVE FROM MY LIST</div>
                 </div>
             </button>
@@ -106,27 +106,3 @@ class Show extends React.Component {
 }
 
 export default Show;
-
-
-// <div className="show_thumbnail grow">
-//     <Link to={`/watch/${show.id}`}>
-//         <Player
-//             ref={player => {
-//                 this.player = player
-//             }}
-//             autoplay={autoplay}
-//             muted={true}
-//             fluid={false}
-//             poster={show.posterUrl}
-//             src={source}
-//             width={width}
-//             height={height}
-//             style="background-size: cover;"
-//         >
-//         <ControlBar></ControlBar>
-//         </Player> 
-//         <div className="myList-container">
-//             {myListStatus}
-//         </div>
-//     </Link>
-// </div>
