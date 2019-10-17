@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchShow } from '../../actions/show_actions';
-import { makeSelectGenre } from '../../reducers/selectors';
+import { makeSelectGenre, myListsHashByShowId } from '../../reducers/selectors';
 import { withRouter } from 'react-router-dom';
 import Show from './show';
 import { createMyList, deleteMyList } from '../../actions/my_lists_actions';
@@ -11,6 +11,9 @@ const msp = (state, ownProps) => {
     return {
         show: state.entities.shows[ownProps.show.id],
         genres: selectGenre(state, ownProps),
+        profileId: state.ui.currentProfileId,
+        myList: myListsHashByShowId(state)[ownProps.show.id] || {},
+        addedToMyList: !!myListsHashByShowId(state)[ownProps.show.id]
     }
 }
 

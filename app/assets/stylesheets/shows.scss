@@ -33,10 +33,46 @@
     background-color: #141414;
 }
 
-.show_thumbnail {
-    padding-right: 10px;
-    
+.show-thumbnail {
+    margin-right: 10px;    
+
+    &:hover {
+        .show-drop-down {
+            i {
+                display: block;
+            }
+        }
+    }
 }
+
+
+.show-drop-down {
+    display: flex;
+    height: 25%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.584));
+    z-index: 2;
+    bottom: 0vw;
+    position: absolute;
+    width: 100%;
+    // background:none;
+    border:none;
+    
+    i {
+        font-size: 1.8vw;
+        display: none;
+    }
+
+    &:hover {
+        i {
+            color: #e50914;
+        }
+    }
+}
+
+
 
 // .video-react .video-react-control-bar {
 //     display: none;
@@ -53,4 +89,165 @@
 
 .video-react-poster, .video-react {
     background-size: cover !important;
+}
+
+.myList-container {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 8.35vw;
+    padding-right: 5%;
+    font-size: 1.7vw;
+    height: 2vw;
+    width: 2vw;
+    transition: font-size 1s;
+    top: 2.5vw;
+
+    button {
+        height: 100%;
+        width: 100%;
+    }
+
+    
+}
+
+.myList-container:hover i {
+    font-size: 1.85vw;
+    transition: font-size .3s;
+}
+
+.myList-container:hover .mylist-status-dropdown {
+    display: block;
+}
+
+.mylist-button {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.mylist-status-dropdown {
+    display: none;
+    position: absolute;
+    width: 7vw;
+    background-color: white;
+    font-size: 0.7vw;
+    min-height: 1.2vw;
+    text-align: center;
+    align-content: center;
+    color: black;
+    box-sizing: border-box;
+    left: -2.5vw;
+    top: 2.2vw;
+    font-weight: 600;
+    padding: 0.2vw 0;
+}
+
+.show-item-content {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 250px;
+    height: 150px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .b {
+        width: 100%;
+        background-color: transparent;
+        height: 75%;
+        margin: 0;
+        z-index: 2;
+
+        .show-item-link {
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+
+
+            .dark-overlay {
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.2);
+                padding-bottom: 14%;
+                box-sizing: content-box;
+
+                &:hover i {
+                    color: rgba(229,9,20, 1);
+                }
+
+
+                .show-item-overlay {
+                    display: none;
+                    width: 100%;
+                    background: transparent;
+                    height: 100%;
+                    padding: 0 5%;
+                    box-sizing: border-box;
+                    opacity: 1;
+
+                    .show-play-btn {
+                        display: flex;
+                        margin-bottom: 0.5vw;
+                        margin-top: 2.5vw;
+                    }
+
+                    .show-title {
+                        color: white;
+                        text-decoration: none;
+                        font-size: 1.5vw;
+                        font-weight: 600;
+                        margin-bottom: 0.5vw;
+                        background: rgba(0, 0, 0, 0.15);
+                        border-radius: 1px;
+                    }
+
+                    .show-overlay-details {
+                        display: flex;
+                        width: 5vw;
+                        justify-content: flex-start;
+                        background: rgba(0, 0, 0, 0.2);
+                        border-radius: 1px;
+                        align-content: center;
+
+                        .show-item-rating {
+                            width: 3vw;
+                            border: 1px solid whitesmoke;
+                            font-size: 0.7vw;
+                            text-align: center;
+                            font-weight: 600;
+                            border-radius: 1px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+    &:hover {
+        .show-item-overlay {
+            z-index: 20;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .myList-container {
+            display: flex !important;
+            justify-content: center;
+            align-content: center;
+        }
+
+    }
+    
+}
+
+
+.left-carousel-btn, .right-carousel-btn {
+    width: 50px;
 }

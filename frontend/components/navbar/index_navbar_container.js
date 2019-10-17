@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import IndexNav from './index_navbar';
 import { logout } from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
-import { unSetCurrentProfile } from '../../actions/profile_actions';
+import { unSetCurrentProfile, fetchProfile } from '../../actions/profile_actions';
 
 const mapStateToProps = ({ entities, session, ui }) => ({
     currentUser: entities.users[session.id],
