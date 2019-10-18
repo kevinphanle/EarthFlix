@@ -4,7 +4,6 @@ import MyListIndex from './mylist_index';
 import * as Selectors from '../../reducers/selectors';
 
 const msp = (state, ownProps) => {
-  console.log(state);
   return {
     shows: Selectors.myListsShows(state),
     pageType: "myList"

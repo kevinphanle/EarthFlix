@@ -1,6 +1,6 @@
 import React from "react";
 import Show from './show_container';
-import ShowContent from "./show_content";
+import ShowContent from "./show_content_container";
 
                     
 class GenreRow extends React.Component {

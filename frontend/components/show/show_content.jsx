@@ -9,8 +9,8 @@ class ShowContent extends React.Component {
   }
 
   addToMyList() {
-    this.props.addToMyList({
-      profile_id: this.props.profile_id,
+    this.props.createMyList({
+      profile_id: this.props.profileId,
       show_id: this.props.show.id
     })
   }
@@ -21,6 +21,7 @@ class ShowContent extends React.Component {
 
   render() {
     let { show, handleClose } = this.props;
+    
     let bg = {
       backgroundImage: 'url(' + show.posterUrl + ')'
     };

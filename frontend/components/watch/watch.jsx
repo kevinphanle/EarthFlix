@@ -40,7 +40,6 @@ class Watch extends React.Component {
                 <Player
                     ref={player => {
                         this.player = player;
-                        // console.log(this.player);
                     }}
                     // width="100%"
                     autoPlay
