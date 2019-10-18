@@ -22,7 +22,7 @@ export const makeSelectGenre = () => createSelector(
 export const myListsHashByShowId = (state) => {
     let hash = {};
     Object.values(state.entities.myLists).forEach(myList => {
-        hash[myList.showId] = myList;
+        hash[myList.show_id] = myList;
     })
     return hash;
 }

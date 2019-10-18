@@ -19,6 +19,7 @@ class MyListIndex extends React.Component {
 
   render() {
     let { shows, pageType } = this.props;
+    console.log(this.props);
     let rows = [];
     let container = [];
     let rowActive;

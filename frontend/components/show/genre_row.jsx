@@ -61,7 +61,6 @@ class GenreRow extends React.Component {
                                 <Show
                                     key={show.id}
                                     show={show}
-
                                 />
                             )
                         }
