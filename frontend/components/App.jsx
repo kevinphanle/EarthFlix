@@ -12,26 +12,32 @@ import IndexNav from './navbar/index_navbar_container';
 import Watch from './watch/watch_container';
 import search_index_container from './search/search_index_container';
 import MyListIndex from './mylist/mylist_index_container';
+import Modal from './modal/modal';
 
 const App = () => {
     return (
         <>
             <main className="main-content">
+
                 <Switch>
                     <AuthRoute exact path={["/", "/signup", "/login"]} component={Navbar} />
                     <ProtectedRoute path={["/browse", "/search"]} component={IndexNav} />
                 </Switch>
 
-                <AuthRoute exact path="/" component={Splash} />
-                <AuthRoute path="/signup" component={SignupForm} />
-                <AuthRoute path="/login" component={LoginForm} />
+                <Modal />
+                <Switch>
+                    <AuthRoute exact path="/" component={Splash} />
+                    <AuthRoute path="/signup" component={SignupForm} />
+                    <AuthRoute path="/login" component={LoginForm} />
 
-                <ProtectedRoute exact path="/browse" component={ShowIndex} />
-                <ProtectedRoute path="/watch/:showId" component={Watch} />
-                <ProtectedRoute exact path="/browse/my-list" component={MyListIndex}/>
-                <ProtectedRoute path="/search" component={search_index_container} />
+                    <ProtectedRoute exact path="/browse" component={ShowIndex} />
+                    <ProtectedRoute path="/watch/:showId" component={Watch} />
+                    <ProtectedRoute exact path="/browse/my-list" component={MyListIndex}/>
+                    <ProtectedRoute path="/search" component={search_index_container} />
 
-                <AuthRoute exact path={["/", "/browse"]} component={footer}/>
+                    <AuthRoute exact path={["/", "/browse"]} component={footer}/>
+
+                </Switch>
             </main>
 
         </>

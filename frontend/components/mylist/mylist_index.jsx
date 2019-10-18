@@ -46,8 +46,10 @@ class MyListIndex extends React.Component {
 
     return (
       <div className="mylist-container">
-        <div className="mylist-index-title">{title}</div>
-        {rows}
+        <div className="mylist-wrapper">
+          <div className="mylist-index-title">{title}</div>
+          {rows}
+        </div>
       </div>
     );
   }

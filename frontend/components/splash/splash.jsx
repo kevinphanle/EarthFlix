@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import * as Images from '../images';
 
 const Splash = props => (
     <div className="splash-image-wrapper">
-        <img src={window.earthBg} className="welcome-image" />
+        <img src={Images.earthBg} className="welcome-image" />
         <div className="splash-wrapper">
 
             <div className="splash-content-wrapper">

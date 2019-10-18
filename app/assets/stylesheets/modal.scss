@@ -1,0 +1,241 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background: #141414;
+  z-index: 5;
+  font-family: 'Montserrat', 'sans serif';
+
+  .profile-modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+
+    .modal-logo-container {
+      position: absolute;
+      top: 10px;
+      width: 100%;
+    }
+
+    .profile-modal-box {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &.active {
+        display: flex;
+      }
+
+      .title {
+        color: white;
+        text-align: center;
+        justify-content: center;
+        font-size: 3.5vw;
+      }
+
+      .thumbnails-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 3vw 0;
+        
+        .thumbnail-box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin: 0 1vw;
+          font-size: 5vw;
+
+          button:focus {
+            outline: none;
+          }
+
+          &.create {
+
+            button {
+              background: none;
+              border: none;
+
+              &:focus {
+                outline: none;
+              }
+            }
+
+            .thumbnail {
+              background: transparent;
+              border: none;
+              border: 3px solid rgba(32, 32, 32, 0.9);
+
+            }
+          }
+
+          button {
+            border: none;
+            background: none;
+          }
+
+          .thumbnail {
+            width: 9vw;
+            height: 9vw;
+            border: 3px solid rgba(32, 32, 32, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: grey;
+
+            i {
+              font-size: 5em;
+              color: whitesmoke;
+            }
+
+            &:hover {
+              cursor: pointer;
+              border: 3px solid white;
+              // background-color: white;
+            }
+          }
+
+          .profile-name {
+            color: white;
+            text-align: center;
+            justify-content: center;
+            font-size: 1.5vw;
+            margin: 1vw;
+          }
+        }
+
+        
+      }
+    }
+    
+    .create-profile-modal-box {
+      display: none;
+      flex-direction: column; justify-content: flex-start; align-items: center;
+      width: 30vw;
+
+      &.active {
+        display: flex;
+      }
+
+      .add-profile-text {
+        border-bottom: 1px solid gray;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        h1 {
+          font-size: 4vw;
+          color: whitesmoke;
+          // margin-bottom: 2vw;
+        }
+  
+        h2 {
+          font-size: 1.2em;
+          color: #666;
+          margin: 1vw 0;
+        }
+      }
+
+
+      .create-profile-form-box {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid gray;
+
+        .create-profile-thumbnail {
+          width: 10vw;
+          height: 10vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 2vw;
+          margin-left: 0;
+        }
+        
+        .create-profile-input {
+          width: 100%;
+          height: 3em;
+          background: #666;
+          padding: .4vw .8vw;
+          color: #fff;
+          font-size: 1.3vw;
+          text-indent: .1vw;
+          box-sizing: border-box;
+          border: 1px solid transparent;
+
+          &::placeholder {
+            color: lightgray;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .create-profile-button-box {
+        margin: 2vw;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+
+        button {
+          padding: .5em 1.5em;
+          text-transform: uppercase;
+          font-weight: 600;
+          letter-spacing: 1px;
+          border: none;
+          font-size: 1.3vw;
+          
+        }
+
+        .create-profile-btn {
+          margin-right: 2vw;
+          background: #fff;
+          color: black;
+          padding: .5em 1.5em;
+          cursor: pointer;
+
+          &:focus {
+            outline: none;
+          }
+
+          &:hover {
+            background: red;
+            color: #fff;
+          }
+        }
+
+        .cancel-btn {
+          background: transparent;
+          color: gray;
+          border: 1px solid gray;
+          cursor: pointer;
+
+          &:hover {
+            color: #fff;
+            border: 1px solid #fff;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}

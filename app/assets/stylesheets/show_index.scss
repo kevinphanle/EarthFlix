@@ -1,6 +1,6 @@
 body {
     height: 100%;
-    background: #141414;
+    // background: #141414;
 }
 
 html {
@@ -8,6 +8,11 @@ html {
     overflow: scroll;
     overflow-x: hidden;
 }
+
+// #root {
+//     height: 100vh;
+//     width: 100vw;
+// }
 
 ::-webkit-scrollbar {
     width: 0px;
@@ -23,7 +28,6 @@ html {
 
 .main-content {
     height: 100%;
-    // background-color: #141414;
 }
 
 .index-container {
@@ -60,7 +64,7 @@ html {
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 10px;
-    z-index: 15;
+    z-index: 2;
     
     text-transform: uppercase;
 

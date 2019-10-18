@@ -14,6 +14,7 @@ class ShowIndex extends React.Component {
     }
 
     componentDidMount() {
+        if (!this.props.currentProfileId) { this.props.openModal('profile') };
         this.props.fetchShows();
         this.props.fetchGenres();
     }

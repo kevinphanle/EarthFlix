@@ -19,7 +19,7 @@ const showsReducer = (state = {}, action) => {
         case RECEIVE_GENRE: 
             return merge({}, state, action.payload.shows);
         case RECEIVE_PROFILE:
-            return merge({}, oldState, action.payload.listedMedia);
+            return merge({}, state, action.payload.listedMedia);
         case RECEIVE_SEARCH_RESULTS:
             return merge({}, state, action.results);
         default:

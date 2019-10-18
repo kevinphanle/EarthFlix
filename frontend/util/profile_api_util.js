@@ -8,7 +8,7 @@ export const fetchProfile = (id) => (
   $.ajax({
       method: 'GET',
       url: `api/profiles/${id}`,
-      data: { profile: { set: false, unset: false } }
+      data: { profile: {set: false, unset: false} }
   })
 )
 export const createProfile = (profile) => (

@@ -10,7 +10,7 @@ json.myLists do
   end
 end
 
-json.listed_media do
+json.listed_shows do
   @profile.listed_shows.each do |show|
       json.set! show.id do
           json.partial! "api/shows/pshow", show: show

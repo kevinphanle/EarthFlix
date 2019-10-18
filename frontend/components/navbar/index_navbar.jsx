@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Search from './search_container';
+import * as Images from '../images';
 
 class IndexNav extends React.Component {
     constructor(props) {
@@ -48,7 +49,7 @@ class IndexNav extends React.Component {
 
                     <section className="left-nav">
                         <Link to="/browse" className="main-logo-btn">
-                            <img src={window.mainLogo} className="earthflix-logo" alt=""/>
+                            <img src={Images.mainLogo} className="earthflix-logo" alt=""/>
                         </Link>
                         {/* <div className="left-nav-links"> */}
                             <Link to="/">Home</Link>

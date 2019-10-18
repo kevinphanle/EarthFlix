@@ -10,14 +10,18 @@ require 'open-uri'
 
 
 User.destroy_all
-# Video.destroy_all
 Show.destroy_all
 ShowGenre.destroy_all
 Genre.destroy_all
-# ShowVideo.destroy_all
+Profile.destroy_all
 
 # Guest user
-User.create!(email: 'guest@guest.com', password: 'password')
+guestUser = User.create!(email: 'guest@guest.com', password: 'password')
+
+# Profile
+defaultProfile = Profile.create!(user_id: guestUser.id, name: 'Spongebob')
+profile_photo = open('https://earthflix-dev.s3-us-west-1.amazonaws.com/profiles/panda.png')
+defaultProfile.photo.attach(io: profile_photo, filename: 'panda.png')
 
 
 # | --------------- VIDEOS ---------------------- |

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, withRouter } from 'react-router-dom';
-                    
+import * as Images from '../images';
+
 class Navbar extends React.Component {
                     
     constructor(props) {
@@ -34,9 +35,12 @@ class Navbar extends React.Component {
                 <header className={navbarClass}>
                     <section className="header-nav">
                         <Link to="/" className="logo-btn">
-                            <img src={window.mainLogo} className="earthflix-logo" alt=""/>
+                            <img src={Images.mainLogo} className="earthflix-logo" alt=""/>
                         </Link>
-
+                        <div className="navbar-profile-pic">
+                            <p>{this.props.fetchedProfile.name}</p>
+                            <img src={this.props.fetchedProfile.photoUrl}/>
+                        </div>
                         <button onClick={this.handleClick} className="logout-btn" >Log Out</button>
                     </section>
                 </header>

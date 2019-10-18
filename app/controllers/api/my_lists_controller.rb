@@ -1,5 +1,5 @@
 class Api::MyListsController < ApplicationController
-  before_action :require_login
+  before_action :require_logged_in!
 
   def create
       @my_list = MyList.new(my_list_params)

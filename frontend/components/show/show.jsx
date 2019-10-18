@@ -7,43 +7,14 @@ class Show extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            show_id: this.props.show.id,
-            height: 150, 
-            width: 250,
-            source: this.props.show.videoUrl,
-            autoplay: false,
-            showButtons: false,
-            toggleControls: false
+            
         }
 
-        // this.handleStateChange = this.handleStateChange.bind(this);
-        // this.play = this.play.bind(this);
-        // this.pause = this.pause.bind(this);
-        // this.load = this.load.bind(this);
+        
         this.addToMyList = this.addToMyList.bind(this);
         this.removeFromMyList = this.removeFromMyList.bind(this);
 
     }
-
-    // componentDidMount() {
-    //     this.player.subscribeToStateChange(this.handleStateChange);
-    // }
-
-    // handleStateChange(state, prevState) {
-    //     this.setState({ player: state });
-    // }
-
-    // play() {
-    //     this.player.play();
-    // }
-
-    // pause() {
-    //     this.player.pause();
-    // }
-
-    // load() {
-    //     this.player.load();
-    // }
 
     addToMyList() {
         this.props.createMyList({
@@ -58,7 +29,6 @@ class Show extends React.Component {
 
     render() {
         const { show } = this.props;
-        const { width, height, source, autoplay, showButtons } = this.state;
 
         let addShow = <button onClick={this.addToMyList}>
                 <div className="mylist-button">

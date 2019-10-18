@@ -1,5 +1,5 @@
 class Api::ProfilesController < ApplicationController
-  before_action :require_login
+  before_action :require_logged_in!
 
   def create
       @profile = Profile.new(profile_params)
@@ -50,6 +50,6 @@ class Api::ProfilesController < ApplicationController
   private
 
   def profile_params
-      params.require(:profile).permit(:name, :maturity_preference, :set, :unset, :thumbnail)
+      params.require(:profile).permit(:name, :set, :unset, :thumbnail)
   end
 end
