@@ -13,7 +13,7 @@ class Show extends React.Component {
         
         this.addToMyList = this.addToMyList.bind(this);
         this.removeFromMyList = this.removeFromMyList.bind(this);
-
+        this.handleOpen = this.handleOpen.bind(this);
     }
 
     addToMyList() {
@@ -25,6 +25,10 @@ class Show extends React.Component {
 
     removeFromMyList() {
         this.props.deleteMyList(this.props.myList.id);
+    }
+
+    handleOpen() {
+        this.props.handleOpen();
     }
 
     render() {

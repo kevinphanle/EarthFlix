@@ -129,6 +129,9 @@ class BigVideo extends React.Component {
               </div>
             </div>
           ) : null}
+
+          <div className="big-video-gradient"></div>
+          <div className="big-video-gradient2"></div>
         </div>
       </div>
     );

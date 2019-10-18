@@ -1,5 +1,6 @@
 import React from "react";
 import Show from './show_container';
+import ShowContent from "./show_content";
 
                     
 class GenreRow extends React.Component {
@@ -7,10 +8,14 @@ class GenreRow extends React.Component {
         super(props);
         this.state = {
             currentRow: 0,
-            hovered: false
+            hovered: false,
+            open: false,
+            showId: 0
         }
 
         this.transRef = React.createRef();
+        this.handleOpen = this.handleOpen.bind(this);
+        this.handleClose = this.handleClose.bind(this);
 
     }
 
@@ -30,6 +35,14 @@ class GenreRow extends React.Component {
     //     }
     // }
 
+    handleOpen(i) {
+        this.setState({showId: i, open: true})
+    }
+
+    handleClose() {
+        this.setState({open: false})
+    }
+
 
     render() {
         const { genre } = this.props;
@@ -43,7 +56,8 @@ class GenreRow extends React.Component {
             this.transRef.current.style.left = `${-this.state.currentRow * 100}%`;
             this.transRef.current.style.width = `${this.rows.length * 100}%`;
         }
-        // debugger;
+
+        let content = this.props.shows[this.state.showId];
         return (
             <div className="genre-container">
 
@@ -61,12 +75,16 @@ class GenreRow extends React.Component {
                                 <Show
                                     key={show.id}
                                     show={show}
+                                    handleOpen={() => this.handleOpen(i)}
                                 />
                             )
                         }
                     </div>
 
                     {this.state.hovered ? <img className="right-carousel-btn" src={window.right_chevron_image} onClick={() => this.moveCarousel(1)}></img> : null}
+                </div>
+                <div className={this.state.open ? 'show-row-content active' : 'show-row-content'}>
+                    <ShowContent show={content} handleClose={this.handleClose}/>
                 </div>
 
             </div>
