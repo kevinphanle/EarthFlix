@@ -7,7 +7,7 @@ class Api::SearchController < ApplicationController
           return
       end
       @shows = Show.includes(:genres)
-          .where("title LIKE (?) OR description LIKE (?) OR genres.name LIKE (?)" , "%#{input}%", "%#{input}%", "%#{input}%").references(:genres)
+          .where("title LIKE (?)" , "%#{input}%").references(:genres)
           .distinct
       render :index
   end

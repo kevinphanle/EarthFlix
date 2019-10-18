@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from 'react-router-dom';
-
+import * as Images from '../images';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -60,7 +60,7 @@ class LoginForm extends React.Component {
 
             <div>
                 <div className="login-wrapper-background">
-                    <img src={window.earthBg} alt=""/>
+                    <img src={Images.earthBg} alt=""/>
                 </div>
 
                 <section className="login-form-wrapper">
