@@ -61,12 +61,17 @@
     i {
         font-size: 1.8vw;
         display: none;
+        cursor: pointer;
     }
 
     &:hover {
         i {
             color: #e50914;
         }
+    }
+
+    &:focus {
+        outline: none;
     }
 }
 

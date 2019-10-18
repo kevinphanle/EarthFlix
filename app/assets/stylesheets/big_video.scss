@@ -89,6 +89,42 @@
         font-weight: 600px;
         margin: 10px 0 5px;
     }
+
+    span {
+        display: flex;
+        
+        .play_button_container {
+            
+        
+        button {
+            display: flex;
+            background-color: rgba(51,51,51,.4);
+            font-size: 1.3em;
+            font-weight: 700;
+            border-style: none;
+            color: white;
+            padding: .75em 2.3em;
+            border-radius: .2vw;
+            margin: 10px;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.893);
+                color: black;
+                border-bottom: 3px;
+                padding: .77em 2.5em;
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            .play_button {
+                margin-right: 5px;
+            }
+        }
+
+        }
+    }
 }
 
 .big-video-container .controls-right {

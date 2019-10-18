@@ -7,9 +7,12 @@ class BigVideo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      buttons: false
+      buttons: false,
+      
     };
 
+    this.addToMyList = this.addToMyList.bind(this);
+    this.removeFromMyList = this.removeFromMyList.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.handleStateChange = this.handleStateChange.bind(this);
@@ -43,16 +46,47 @@ class BigVideo extends React.Component {
     }, 400);
   }
 
+  addToMyList() {
+    this.props.createMyList({
+        profile_id: this.props.profileId,
+        show_id: this.props.show.id,
+    });
+  }
+
+  removeFromMyList() {
+    this.props.deleteMyList(this.props.myList.id);
+  }
+
   render() {
     const { show } = this.props;
     if (!show) {
       return null;
     }
-    // debugger;
+    
+    let addVideo =
+      <div className="play_button_container">
+        <button onClick={this.addToMyList}>
+          <div className="play_button">
+            <i className="fas fa-plus"></i>
+          </div>
+          <div className="play_button_text">My List</div>
+        </button>
+      </div>;
+    
+    let removeVideo =
+      <div className="play_button_container">
+        <button onClick={this.removeFromMyList}>
+          <div className="play_button">
+            <i className="fas fa-check"></i>
+          </div>
+          <div className="play_button_text">My List</div>
+        </button>
+      </div>;
+    let myListStatus = this.props.addedToMyList ? removeVideo : addVideo;
+
+
     return (
       <div className="big-video-wrapper">
-        {/* <figure className="big-video-filter" /> */}
-        {/* <figure className="big-video-bg"></figure> */}
         <div
           className="big-video-container"
           id="big-video"
@@ -61,14 +95,13 @@ class BigVideo extends React.Component {
         >
           <Player
             ref={player => (this.player = player)}
-            // width="100%"
-                    poster={show.posterUrl}
+            poster={show.posterUrl}
             autoPlay
             loop={true}
             muted={true}
             load={true}
-                    src={show.videoUrl}
-                    style="none"
+            src={show.videoUrl}
+            style="none"
           />
 
           {this.state.buttons ? (
@@ -80,9 +113,9 @@ class BigVideo extends React.Component {
                   <Link className="link-button" to={`/watch/${show.id}`}>
                     <button>
                         <i className="fas fa-play"></i>
-                        
                     </button>
                   </Link>
+                  {myListStatus}
                 </span>
 
                 <h2>Watch Now</h2>

@@ -9,7 +9,7 @@ import { openModal } from '../../actions/modal_actions';
 const mapStateToProps = (state) => {
     const shows = Object.values(state.entities.shows);
     const genres = Object.values(state.entities.genres);
-    const firstShow = shows[Math.floor(Math.random() * shows.length)];
+    const firstShow = shows[0];
     return {
         shows,
         genres,
