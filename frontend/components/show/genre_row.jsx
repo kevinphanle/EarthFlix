@@ -71,12 +71,15 @@ class GenreRow extends React.Component {
 
                     <div className="show-container">
                         {
-                            this.props.shows.map((show, i) =>
-                                <Show
+                            this.props.shows.map((show, i) => {
+                                let activeItem = (this.state.open && this.state.showId === i) ? 'active' : "";
+                                return <Show
                                     key={show.id}
                                     show={show}
                                     handleOpen={() => this.handleOpen(i)}
+                                    active={activeItem}
                                 />
+                            }
                             )
                         }
                     </div>

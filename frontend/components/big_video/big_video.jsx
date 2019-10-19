@@ -124,7 +124,7 @@ class BigVideo extends React.Component {
 
               <div className="controls-right">
                 <span>
-                  <strong>Rating: </strong> {show.rating}
+                  Rating: {show.rating}
                 </span>
               </div>
             </div>

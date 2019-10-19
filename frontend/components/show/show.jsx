@@ -51,7 +51,7 @@ class Show extends React.Component {
         let myListStatus = this.props.addedToMyList ? removeShow : addShow;
         
         return (
-            <div className="show-thumbnail grow">
+            <div className={`show-thumbnail grow ${this.props.active}`}>
                 <div className="show-item-content" style={{ backgroundImage: 'url(' + show.posterUrl + ')' }}>
                         <div className="b">
                             <Link to={`/watch/${show.id}`}>
@@ -73,7 +73,9 @@ class Show extends React.Component {
                         </div>
                         <button onClick={this.handleOpen} className="show-drop-down"><i className="fas fa-chevron-down"></i></button>
                 </div>
-                
+                <div className="show-border-arrow">
+                    <i className="fas fa-caret-down"></i>
+                </div>
             </div>
         )
     }

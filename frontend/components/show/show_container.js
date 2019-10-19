@@ -11,6 +11,7 @@ const msp = (state, ownProps) => {
     return {
         show: state.entities.shows[ownProps.show.id],
         genres: selectGenre(state, ownProps),
+        active: ownProps.active,
         profileId: state.ui.currentProfileId,
         myList: myListsHashByShowId(state)[ownProps.show.id] || {},
         addedToMyList: !!myListsHashByShowId(state)[ownProps.show.id]

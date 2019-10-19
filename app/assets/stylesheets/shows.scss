@@ -32,8 +32,33 @@
     background-color: #141414;
 }
 
+.show-border-arrow {
+    display: none;
+    width: 100%;
+    position: absolute;
+    bottom: -1.3vw;
+    justify-content: center;
+    align-items: center;
+}
+
 .show-thumbnail {
     margin-right: 10px;    
+
+    &.active {
+        outline: 2px solid white;
+        transform: translateY(-.95vw);
+        transition: transform .5s;
+        
+        .show-border-arrow {
+            display: flex;
+
+            i {
+                color: white;
+                font-size: 1.99vw;
+            }
+        }
+        
+    }
 
     &:hover {
         .show-drop-down {
