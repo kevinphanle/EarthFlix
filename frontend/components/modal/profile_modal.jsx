@@ -4,15 +4,16 @@ import { connect } from 'react-redux';
 import { setCurrentProfile, fetchProfiles, createProfile } from '../../actions/profile_actions';
 import { randomProfileThumbnail } from '../../reducers/selectors';
 import * as Images from '../images.js';
-import { create } from 'domain';
-
+import Profile from './profile';
 
 class ProfileModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       formOpen: false,
-      input: ""
+      input: "",
+      user_id: this.props.currentUserId,
+      photoUrl: randomProfileThumbnail()
     }
 
     this.handleSelectProfile = this.handleSelectProfile.bind(this);
@@ -21,6 +22,10 @@ class ProfileModal extends React.Component {
     this.handleClose = this.handleClose.bind(this);
     this.createProfile = this.createProfile.bind(this);
     this.scrollToTop = this.scrollToTop.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchProfiles();
   }
 
   scrollToTop() {
@@ -57,15 +62,17 @@ class ProfileModal extends React.Component {
 
   createProfile(e) {
     e.preventDefault();
-    this.props.createProfile(this.state);
-    
+    let newProfile = {
+      name: this.state.input,
+      user_id: this.state.user_id,
+      thumbnail: this.state.photoUrl
+    }
+    this.props.createProfile(newProfile);
   }
 
   render() {
     let { profiles } = this.props
-    let thumbnail = profiles[0] ? profiles[0].photoUrl : "";
     let randomThumbnail = randomProfileThumbnail();
-    let name = (profiles[0]) ? profiles[0].name : "";
     let profileModalBox;
     let createProfileModalBox;
     if (this.state.formOpen) {
@@ -75,6 +82,13 @@ class ProfileModal extends React.Component {
       profileModalBox = "profile-modal-box active";
       createProfileModalBox = "create-profile-modal-box";            
     }
+    let profilelist = [];
+
+    profiles.forEach((profile, i) => {
+      profilelist.push(
+        <Profile profile={profile} key={i} handleSelectProfile={this.handleSelectProfile}/>
+      )
+    })
 
     return (
       <div className="profile-modal-container">
@@ -84,12 +98,7 @@ class ProfileModal extends React.Component {
         <div className={profileModalBox}>
             <div className="title">Who's watching?</div>
             <div className="thumbnails-container">
-                <div className="thumbnail-box">
-                  <button onClick={this.handleSelectProfile}>
-                    <img src={thumbnail} className="thumbnail" />
-                  </button>
-                  <div className="profile-name">{name}</div> 
-                </div>
+                {profilelist}
                 <div className="thumbnail-box create">
                   <button onClick={this.handleCreateProfile}>
                     <div className="thumbnail">
@@ -106,8 +115,8 @@ class ProfileModal extends React.Component {
             <h2>Add a profile for another person watching Earthflix.</h2>
           </div>
             <div className="create-profile-form-box">
-                <img src={randomThumbnail} className="create-profile-thumbnail" />
-                <input type="text" onChange={this.update('input')} placeholder="Name"
+              <img src={randomThumbnail} className="create-profile-thumbnail" />
+              <input type="text" onChange={this.update('input')} placeholder="Name"
                     className="create-profile-input"/>
             </div>
             <div className="create-profile-button-box">
@@ -127,7 +136,8 @@ class ProfileModal extends React.Component {
 
 const mapStateToProps = state => {
   return {
-      profiles: Object.values(state.entities.profiles),
+    profiles: Object.values(state.entities.profiles),
+    currentUserId: state.session.id
   };
 };
 
@@ -135,7 +145,8 @@ const mapDispatchToProps = dispatch => {
   return {
     closeModal: () => dispatch(closeModal()),
     createProfile: input => dispatch(createProfile(input)),
-    setCurrentProfile: (profileId) => dispatch(setCurrentProfile(profileId))
+    setCurrentProfile: (profileId) => dispatch(setCurrentProfile(profileId)),
+    fetchProfiles: () => dispatch(fetchProfiles())
   };
 };
 

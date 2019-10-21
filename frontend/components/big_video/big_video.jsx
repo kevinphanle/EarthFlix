@@ -8,7 +8,6 @@ class BigVideo extends React.Component {
     super(props);
     this.state = {
       buttons: false,
-      
     };
 
     this.addToMyList = this.addToMyList.bind(this);
@@ -16,10 +15,6 @@ class BigVideo extends React.Component {
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.handleStateChange = this.handleStateChange.bind(this);
-  }
-
-  componentDidMount() {
-    // this.props.fetchShow();
   }
 
   handleStateChange(state, prevState) {
@@ -38,9 +33,7 @@ class BigVideo extends React.Component {
 
   handleMouseLeave(e) {
     e.preventDefault();
-
     this.setState({ buttons: false });
-
     setTimeout(() => {
       this.player.pause();
     }, 400);
@@ -83,7 +76,6 @@ class BigVideo extends React.Component {
         </button>
       </div>;
     let myListStatus = this.props.addedToMyList ? removeVideo : addVideo;
-
 
     return (
       <div className="big-video-wrapper">

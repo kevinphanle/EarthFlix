@@ -1,7 +1,7 @@
 export const fetchProfiles = () => (
   $.ajax({
-      method: 'GET',
-      url: 'api/profiles'
+    method: 'GET',
+    url: 'api/profiles'
   })
 )
 export const fetchProfile = (id) => (

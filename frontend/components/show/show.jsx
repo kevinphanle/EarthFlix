@@ -7,10 +7,7 @@ class Show extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            
         }
-
-        
         this.addToMyList = this.addToMyList.bind(this);
         this.removeFromMyList = this.removeFromMyList.bind(this);
         this.handleOpen = this.handleOpen.bind(this);

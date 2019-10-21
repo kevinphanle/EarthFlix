@@ -35,6 +35,7 @@ class IndexNav extends React.Component {
             document.addEventListener('scroll', this.debounce(this.storeScroll), { passive: true });
             this.storeScroll();
             this.props.fetchProfile(this.props.currentProfileId);
+            this.props.fetchProfiles();
         }
     }
 

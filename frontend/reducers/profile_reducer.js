@@ -6,7 +6,7 @@ const profilesReducer = (oldState = {}, action) => {
     let newState = merge({}, oldState);
     switch(action.type) {
         case RECEIVE_PROFILES:
-            return action.profiles;
+            return merge({}, oldState, action.profiles);
         case RECEIVE_PROFILE:
             newState[action.payload.profile.id] = action.payload.profile;
             return newState;

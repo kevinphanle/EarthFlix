@@ -10,10 +10,10 @@ require 'open-uri'
 
 
 User.destroy_all
-Show.destroy_all
-ShowGenre.destroy_all
-Genre.destroy_all
 Profile.destroy_all
+Show.destroy_all
+Genre.destroy_all
+ShowGenre.destroy_all
 
 # Guest user
 guestUser = User.create!(email: 'guest@guest.com', password: 'password')
