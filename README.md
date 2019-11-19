@@ -4,9 +4,9 @@
 
 EarthFlix is a media streaming service inspired by Netflix. Earthflix allows users to stream online videos about their favorite aspect of the planet we live on, Earth. The application uses:
 
+* Frontend: **React/Redux**
 * Backend: **Ruby on Rails** 
 * Database: **PostgreSQL**
-* Frontend: **React/Redux**
 
 ![alt text](https://earthflix-dev.s3-us-west-1.amazonaws.com/Earthflix_splash_sc.png)
 
@@ -40,13 +40,3 @@ Shows are displayed in groups of Genres where shows and genres are joined by a `
 ### Watch
 
 When a show block is clicked, the user will redirected to the `/watch/:showId` page that will render the video in full screen. The video will have a poster that will be displayed while the video is loading after which it will autoplay. The video library, [Video-React](https://video-react.js.org) was used for its functionality.
-
-
-## To Be Implemented
-
-* Search by title, genre, year
-* MyList, where the user can save lists and shows to their own personal list
-* Show blocks autoplay when hovered over
-* Update descriptions to be more descriptive
-* Have the show thumbnails and videos load faster and more efficiently
-* Custom video player
