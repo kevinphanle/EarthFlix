@@ -10,10 +10,8 @@ class Watch extends React.Component {
     }
 
     componentDidMount() {
-        // debugger;
         this.props.fetchShow(this.props.match.params.showId);
         this.player.subscribeToStateChange(this.handleStateChange.bind(this));
-        // this.player.play();
     }
     
     componentDidUpdate() {
@@ -21,7 +19,6 @@ class Watch extends React.Component {
     }
 
     handleStateChange(state) {
-        // copy player state to this component's state
         this.setState({
             player: state
         });

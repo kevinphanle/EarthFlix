@@ -20,6 +20,9 @@ EarthFlix was designed and built in 2 weeks.
 * Display shows
 * Display genres
 * Ability to watch and interact with shows
+* Search shows by title
+* My List feature allowing for personalized viewing
+* Profile creation
 
 ![alt text](https://earthflix-dev.s3-us-west-1.amazonaws.com/earthflix_index_sc.png)
 
@@ -40,3 +43,21 @@ Shows are displayed in groups of Genres where shows and genres are joined by a `
 ### Watch
 
 When a show block is clicked, the user will redirected to the `/watch/:showId` page that will render the video in full screen. The video will have a poster that will be displayed while the video is loading after which it will autoplay. The video library, [Video-React](https://video-react.js.org) was used for its functionality.
+
+### Search
+
+When searching for a show in the search bar, the controller will get the input of the search and using a SQL query, will return all the shows with the input string contained within the title regardless of case sensitivity thanks to ILIKE. 
+
+```
+def index
+    input = search_params[:input]
+    if input.empty?
+        render json: {}
+        return
+    end
+    @shows = Show.includes(:genres)
+        .where("title ILIKE (?)" , "%#{input}%").references(:genres)
+        .distinct
+    render :index
+end
+```

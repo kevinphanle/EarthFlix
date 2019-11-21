@@ -19,22 +19,6 @@ class GenreRow extends React.Component {
 
     }
 
-    // moveCarousel(num) {
-    //     let ind = this.state.currentRow;
-    //     ind += num;
-    //     if (ind < 0) {
-    //         this.transRef.current.style.left = "25vw";
-    //         setTimeout(() => this.setState({ currentRow: 0 }), 300);
-    //     } else if (ind >= this.rows.length) {
-    //         this.transRef.current.style.left = `-${(this.rows.length - 1) * 100 + 25}vw`;
-    //         setTimeout(() => this.setState({ currentRow: this.rows.length - 1 }), 300);
-    //     } else {
-    //         this.setState({
-    //             currentRow: ind,
-    //         })
-    //     }
-    // }
-
     handleOpen(i) {
         this.setState({showId: i, open: true})
     }
@@ -42,7 +26,6 @@ class GenreRow extends React.Component {
     handleClose() {
         this.setState({open: false})
     }
-
 
     render() {
         const { genre } = this.props;

@@ -1,7 +1,5 @@
 import React from 'react';
-import { getShow } from '../../actions/show_actions';
-import { Link, Redirect, withRouter } from 'react-router-dom';
-import { Player, ControlBar } from 'video-react';
+import { Link } from 'react-router-dom';
 
 class Show extends React.Component {
     constructor(props) {
