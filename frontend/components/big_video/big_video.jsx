@@ -93,7 +93,7 @@ class BigVideo extends React.Component {
             muted={true}
             load={true}
             src={show.videoUrl}
-            style="none"
+            style="padding-top: 35.35%;"
           />
 
           {this.state.buttons ? (

@@ -50,7 +50,7 @@ class GenreRow extends React.Component {
                     onPointerEnter={() => this.setState({ hovered: true })}
                     onPointerLeave={() => this.setState({ hovered: false })}
                 >
-                    {this.state.hovered ? <img className="left-carousel-btn" src={window.left_chevron_image} onClick={() => this.moveCarousel(-1)}></img> : null}
+                    {/* {this.state.hovered ? <img className="left-carousel-btn" src={window.left_chevron_image} onClick={() => this.moveCarousel(-1)}></img> : null} */}
 
                     <div className="show-container">
                         {
@@ -67,7 +67,7 @@ class GenreRow extends React.Component {
                         }
                     </div>
 
-                    {this.state.hovered ? <img className="right-carousel-btn" src={window.right_chevron_image} onClick={() => this.moveCarousel(1)}></img> : null}
+                    {/* {this.state.hovered ? <img className="right-carousel-btn" src={window.right_chevron_image} onClick={() => this.moveCarousel(1)}></img> : null} */}
                 </div>
                 <div className={this.state.open ? 'show-row-content active' : 'show-row-content'}>
                     <ShowContent show={content} handleClose={this.handleClose}/>
