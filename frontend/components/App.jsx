@@ -34,10 +34,9 @@ const App = () => {
                     <ProtectedRoute path="/watch/:showId" component={Watch} />
                     <ProtectedRoute exact path="/browse/my-list" component={MyListIndex}/>
                     <ProtectedRoute path="/search" component={search_index_container} />
-
-                    <AuthRoute exact path={["/", "/browse"]} component={footer}/>
-
                 </Switch>
+
+                <AuthRoute exact path={["/", "/browse"]} component={footer}/>
             </main>
 
         </>
