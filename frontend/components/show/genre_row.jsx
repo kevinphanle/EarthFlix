@@ -61,6 +61,7 @@ class GenreRow extends React.Component {
                                     show={show}
                                     handleOpen={() => this.handleOpen(i)}
                                     active={activeItem}
+                                    class='lazy'
                                 />
                             }
                             )

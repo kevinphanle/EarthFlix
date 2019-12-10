@@ -196,6 +196,11 @@
     justify-content: flex-start;
     font-family: 'Montserrat', 'sans serif';
 
+    &.lazy {
+        background-image: none;
+        background-color: #F1F1FA;
+    }
+
     .b {
         width: 100%;
         background-color: transparent;
