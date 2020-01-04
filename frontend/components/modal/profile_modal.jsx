@@ -5,6 +5,7 @@ import { setCurrentProfile, fetchProfiles, createProfile } from '../../actions/p
 import { randomProfileThumbnail } from '../../reducers/selectors';
 import * as Images from '../images.js';
 import Profile from './profile';
+//just a comment test test test
 
 class ProfileModal extends React.Component {
   constructor(props) {
