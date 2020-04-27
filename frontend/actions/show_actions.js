@@ -18,7 +18,6 @@ const receiveShows = (shows) => ({
 });
 
 const receiveShow = (show) => {
-    // debugger;
     return {
         type: RECEIVE_SHOW,
         show
