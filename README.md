@@ -4,7 +4,7 @@
 
 EarthFlix is a media streaming service inspired by Netflix. Earthflix allows users to stream online videos about their favorite aspect of the planet we live on, Earth. The application uses:
 
-* Frontend: **React/Redux**
+* Frontend: **ReactJS/Redux**
 * Backend: **Ruby on Rails** 
 * Database: **PostgreSQL**
 
