@@ -17,10 +17,10 @@ EarthFlix was designed and built in 2 weeks.
 ## Features
 
 * New account creation, login, guest login
-* Display shows
+* Display video
 * Display genres
-* Ability to watch and interact with shows
-* Search shows by title
+* Ability to watch and interact with nature videos
+* Search videos by title
 * My List feature allowing for personalized viewing
 * Profile creation
 
