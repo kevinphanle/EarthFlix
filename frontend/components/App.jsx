@@ -36,7 +36,7 @@ const App = () => {
                     <ProtectedRoute path="/search" component={search_index_container} />
                 </Switch>
 
-                <AuthRoute exact path={["/", "/browse"]} component={footer}/>
+                <Route path="/" component={footer}/>
             </main>
 
         </>

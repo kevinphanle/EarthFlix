@@ -1,6 +1,6 @@
 body {
     height: 100%;
-    // background: #141414;
+    background: #141414;
 }
 
 html {
@@ -28,6 +28,8 @@ html {
 
 .main-content {
     height: 100%;
+    position: relative;
+    padding-bottom: 100px;
 }
 
 .index-container {

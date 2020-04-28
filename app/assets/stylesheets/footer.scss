@@ -8,18 +8,11 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 20px 0 0 0;
+    padding: 20px 0;
     height: 50px;
 }
 
 .earthflix-footer * {
     margin: 5px 10px;
     color: white;
-}
-
-.facebook-symbol,
-.github-symbol {
-    max-height: 35px;
-    max-width: 35px;
-    transform: scale(2);
 }
