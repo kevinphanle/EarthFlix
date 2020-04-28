@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { Player, ControlBar } from "video-react";
 import { Link } from "react-router-dom";
 
 class BigVideo extends React.Component {
@@ -14,28 +13,20 @@ class BigVideo extends React.Component {
     this.removeFromMyList = this.removeFromMyList.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
-    this.handleStateChange = this.handleStateChange.bind(this);
-  }
 
-  handleStateChange(state, prevState) {
-    this.setState({
-      player: state
-    });
   }
 
   handleMouseEnter(e) {
     e.preventDefault();
     this.setState({ buttons: true });
-    setTimeout(() => {
-      this.player.play();
-    }, 200);
+    this.refs.vidRef.play();
   }
 
   handleMouseLeave(e) {
     e.preventDefault();
     this.setState({ buttons: false });
     setTimeout(() => {
-      this.player.pause();
+      this.refs.vidRef.pause();
     }, 400);
   }
 
@@ -57,22 +48,16 @@ class BigVideo extends React.Component {
     }
     
     let addVideo =
-      <div className="play_button_container">
+      <div className="list_button_container">
         <button onClick={this.addToMyList}>
-          <div className="play_button">
-            <i className="fas fa-plus"></i>
-          </div>
-          <div className="play_button_text">My List</div>
+          Add to List
         </button>
       </div>;
     
     let removeVideo =
-      <div className="play_button_container">
+      <div className="list_button_container">
         <button onClick={this.removeFromMyList}>
-          <div className="play_button">
-            <i className="fas fa-check"></i>
-          </div>
-          <div className="play_button_text">My List</div>
+          Remove from List
         </button>
       </div>;
     let myListStatus = this.props.addedToMyList ? removeVideo : addVideo;
@@ -85,16 +70,16 @@ class BigVideo extends React.Component {
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
         >
-          <Player
-            ref={player => (this.player = player)}
-            poster={show.posterUrl}
-            autoPlay
-            loop={true}
-            muted={true}
-            load={true}
+          
+          <video
             src={show.videoUrl}
-            style="padding-top: 35.35%;"
-          />
+            ref="vidRef"
+            type="video/mp4"
+            loop
+            muted
+            autoPlay
+            preload="none"
+          ></video>
 
           {this.state.buttons ? (
             <div className="video-buttons">
@@ -103,9 +88,7 @@ class BigVideo extends React.Component {
 
                 <span>
                   <Link className="link-button" to={`/watch/${show.id}`}>
-                    <button>
-                        <i className="fas fa-play"></i>
-                    </button>
+                    Play
                   </Link>
                   {myListStatus}
                 </span>

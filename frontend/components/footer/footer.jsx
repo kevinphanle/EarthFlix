@@ -5,8 +5,6 @@ import * as Images from '../images';
 class Footer extends React.Component {
 
     render() {
-        console.log(Images);
-        console.log(window);
         return (
             <footer className="earthflix-footer">
                 <a href="https://github.com/kevinphanle" target='new' className="footerimg">

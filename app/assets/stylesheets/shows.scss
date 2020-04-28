@@ -42,7 +42,7 @@
 }
 
 .show-thumbnail {
-    margin-right: 10px;    
+    margin-right: 5px;    
 
     &.active {
         outline: 2px solid white;
@@ -185,6 +185,7 @@
 }
 
 .show-item-content {
+    background-color: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(55,55,66,1) 49%, rgba(92,93,93,1) 100%);
     background-size: cover;
     background-position: center;
     position: relative;
