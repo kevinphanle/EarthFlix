@@ -134,7 +134,8 @@ class Show extends React.Component {
           </button>
         </div>
         <div className="show-border-arrow">
-          <i className="fas fa-caret-down"></i>
+          {/* <i className="fas fa-caret-down"></i> */}
+          <img src={window.carat} alt=""/>
         </div>
       </div>
     );
