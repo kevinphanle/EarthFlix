@@ -138,7 +138,7 @@ class Show extends React.Component {
         </div>
         <div className="show-border-arrow">
           {/* <i className="fas fa-caret-down"></i> */}
-          <img src={window.carat} style="color: white" alt=""/>
+          {/* <img src={window.carat} style={{color: 'white'}} alt=""/> */}
         </div>
       </div>
     );
