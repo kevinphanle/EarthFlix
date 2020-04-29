@@ -76,28 +76,26 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
-    bottom: 0vw;
+    bottom: 0;
     position: absolute;
     width: 100%;
     background: none;
     border:none;
     color: whitesmoke;
     
-    i {
-        font-size: 1.8vw;
-        display: none;
-        cursor: pointer;
-    }
+    img {
+        width: 15px;
 
-    &:hover {
-        i {
-            color: #e50914;
+        &:hover {
+            cursor: pointer;
         }
     }
 
     &:focus {
         outline: none;
     }
+
+
 }
 
 

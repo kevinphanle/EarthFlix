@@ -132,13 +132,12 @@ class Show extends React.Component {
             <div className="myList-container">{myListStatus}</div>
           </div>
           <button onClick={this.handleOpen} className="show-drop-down">
-            {/* <i className="fas fa-chevron-down"></i> */}
-            <img src={window.carat} alt=""/>
+
+            <img id="carat-down" src={window.carat} alt=""/>
           </button>
         </div>
         <div className="show-border-arrow">
-          {/* <i className="fas fa-caret-down"></i> */}
-          {/* <img src={window.carat} style={{color: 'white'}} alt=""/> */}
+
         </div>
       </div>
     );
