@@ -55,8 +55,6 @@ class LoginForm extends React.Component {
 
   render() {
 
-    console.log(this.state);
-
     return (
       <section className="login-form-wrapper">
         <h3>{this.props.formType}</h3>

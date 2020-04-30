@@ -21,7 +21,8 @@ const App = () => {
         <ProtectedRoute path={["/browse", "/search"]} component={IndexNav} />
       </Switch>
 
-      <Modal />
+      <Route path="/browse" component={Modal} />
+      {/* <Modal /> */}
       <Switch>
         <AuthRoute exact path={["/", "/login"]} component={Splash} />
         <AuthRoute path="/signup" component={SignupForm} />
