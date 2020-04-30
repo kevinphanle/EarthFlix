@@ -14,12 +14,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: transparent;
+    background-color: transparent;
 }
 
 html:not([data-scroll='0']) {
     .index-navbar {
-        background: blue;
+        background-color: blue;
         transition: background .5s;
     }
 }
@@ -39,11 +39,11 @@ html:not([data-scroll='0']) {
     }
 }
 
-.fade-dark-nav {
-    animation: nav-fade-dark;
-    animation-fill-mode: forwards;
-    animation-duration: .8s;
-}
+// .fade-dark-nav {
+//     animation: nav-fade-dark;
+//     animation-fill-mode: forwards;
+//     animation-duration: .8s;
+// }
 
 
 .main-logo-btn img {

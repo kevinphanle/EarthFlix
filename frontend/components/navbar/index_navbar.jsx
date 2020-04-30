@@ -6,9 +6,7 @@ import * as Images from "../images";
 class IndexNav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      navBackground: false,
-    };
+
     this.handleLogout = this.handleLogout.bind(this);
     this.storeScroll = this.storeScroll.bind(this);
     this.debounce = this.debounce.bind(this);
@@ -32,8 +30,9 @@ class IndexNav extends React.Component {
     };
   }
 
-  storeScroll() {
-    document.documentElement.dataset.scroll = window.scrollY;
+    storeScroll() {
+      console.log(document.documentElement.dataset.scroll)
+    return document.documentElement.dataset.scroll = window.scrollY;
   }
 
   componentDidMount() {
@@ -54,11 +53,8 @@ class IndexNav extends React.Component {
     return (
       <header
         className="index-navbar-wrapper"
-        // ref={(navRef) => {
-        //   this.navRef = navRef;
-        // }}
       >
-        <header className="index-navbar fade-dark-nav">
+        <header className="index-navbar">
           <section className="left-nav">
             <Link to="/browse" className="main-logo-btn">
               <img src={Images.mainLogo} className="earthflix-logo" alt="" />
