@@ -6,10 +6,13 @@ import * as Images from "../images";
 class IndexNav extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isTop: true,
+    };
 
     this.handleLogout = this.handleLogout.bind(this);
     this.storeScroll = this.storeScroll.bind(this);
-    this.debounce = this.debounce.bind(this);
+    // this.debounce = this.debounce.bind(this);
   }
 
   handleLogout() {
@@ -18,41 +21,50 @@ class IndexNav extends React.Component {
       .then(this.props.logout().then(() => this.props.history.push("/")));
   }
 
-  debounce(fn) {
-    let frame;
-    return (...params) => {
-      if (frame) {
-        cancelAnimationFrame(frame);
-      }
-      frame = requestAnimationFrame(() => {
-        fn(...params);
-      });
-    };
-  }
+  //   debounce(fn) {
+  //     let frame;
+  //     return (...params) => {
+  //       if (frame) {
+  //         cancelAnimationFrame(frame);
+  //       }
+  //       frame = requestAnimationFrame(() => {
+  //         fn(...params);
+  //       });
+  //     };
+  //   }
 
-    storeScroll() {
-      console.log(document.documentElement.dataset.scroll)
-    return document.documentElement.dataset.scroll = window.scrollY;
-  }
+  storeScroll() {}
 
   componentDidMount() {
+    document.addEventListener("scroll", () => {
+      const isTop = window.scrollY < 100;
+      console.log(window.scrollY);
+      if (isTop !== this.state.isTop) {
+        this.setState({ isTop: isTop });
+      }
+    });
     if (this.props.currentUser) {
-      document.addEventListener("scroll", this.debounce(this.storeScroll), {
-        passive: true,
-      });
-      this.storeScroll();
       this.props.fetchProfile(this.props.currentProfileId);
       this.props.fetchProfiles();
     }
   }
 
- 
+  componentWillUnmount() {
+    document.removeEventListener("scroll", this.storeScroll);
+  }
 
   render() {
-
+    let navStyles = {};
+    if (this.state.isTop) {
+    //   navStyles.backgroundColor = 'rgba(52, 52, 52, alpha)';
+      navStyles.backgroundColor = '#493485';
+    } else {
+      navStyles.backgroundColor = "#000";
+    }
     return (
       <header
         className="index-navbar-wrapper"
+        style={{ backgroundColor: navStyles.backgroundColor }}
       >
         <header className="index-navbar">
           <section className="left-nav">
