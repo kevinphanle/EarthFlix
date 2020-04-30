@@ -11,7 +11,6 @@ class LoginForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleGuestLogin = this.handleGuestLogin.bind(this);
-        this.initLogin = this.initLogin.bind(this);
     }
 
     handleSubmit(e) {
