@@ -33,49 +33,47 @@ class SignupFrom extends React.Component {
 
   render() {
     return (
-      <div className="signup">
-        <div className="signup-wrapper">
-          <section className="signup-form-wrapper">
-            <form onSubmit={this.handleGuestLogin}>
+      <section className="signup-form-wrapper">
+        <h3>{this.props.formType}</h3>
+        <form className="signup-form" onSubmit={this.handleSubmit}>
+          <label htmlFor="email">
+            <input
+              type="text"
+              id="email"
+              placeholder="Email"
+              value={this.state.email}
+              className="email-signup"
+              onChange={this.update("email")}
+            />
+          </label>
+          <label htmlFor="password">
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              value={this.state.password}
+              className="password-signup"
+              onChange={this.update("password")}
+            />
+          </label>
+
+          <div className="signup-buttons">
+            <input type="submit" className="signup-form-btn" value="Sign Up" />
+
+            <form
+              onSubmit={this.handleGuestLogin}
+              className="signup-demo-login"
+            >
               <input
                 type="submit"
-                value="Demo User Login"
+                value="Demo User"
                 className="guest-login-btn"
               />
             </form>
-            <h3>{this.props.formType}</h3>
-            <form className="signup-form" onSubmit={this.handleSubmit}>
-              <label htmlFor="email">
-                Email:
-                <input
-                  type="text"
-                  id="email"
-                  value={this.state.email}
-                  className="email-signup"
-                  onChange={this.update("email")}
-                />
-              </label>
-              <label htmlFor="password">
-                <span>Password:</span>
-                <input
-                  type="password"
-                  id="password"
-                  value={this.state.password}
-                  className="password-signup"
-                  onChange={this.update("password")}
-                />
-              </label>
-
-              <input
-                type="submit"
-                className="signup-form-btn"
-                value="Sign Up"
-              />
-              {/* <p>Already a part of EarthFlix? <Link to="/login">Sign In now!</Link></p> */}
-            </form>
-          </section>
-        </div>
-      </div>
+          </div>
+          <p class="other-form">Already a part of EarthFlix? <Link to="/login">Sign In now!</Link></p>
+        </form>
+      </section>
     );
   }
 }

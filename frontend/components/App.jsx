@@ -22,11 +22,8 @@ const App = () => {
       </Switch>
 
       <Route path="/browse" component={Modal} />
-      {/* <Modal /> */}
       <Switch>
-        <AuthRoute exact path={["/", "/login"]} component={Splash} />
-        <AuthRoute path="/signup" component={SignupForm} />
-        {/* <AuthRoute path="/login" component={LoginForm} /> */}
+        <AuthRoute exact path={["/", "/login", "/signup"]} component={Splash} />
 
         <ProtectedRoute exact path="/browse" component={ShowIndex} />
         <ProtectedRoute path="/watch/:showId" component={Watch} />
