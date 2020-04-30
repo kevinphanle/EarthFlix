@@ -54,41 +54,40 @@ class LoginForm extends React.Component {
     };
   }
 
-    render() {
-      
-        console.log(Images.earthBg)
+  render() {
+    console.log(Images.earthBg);
     return (
-      <div className="login-page" style={{backgroundImage: `url(${Images.earthBg})` }}>
-        {/* <div className="login-wrapper-background">
-          <img src={Images.earthBg} alt="" />
-        </div> */}
-
+      <div
+        className="login-page"
+      >
         <section className="login-form-wrapper">
-          <div className="login-form-body">
-            <h3>{this.props.formType}</h3>
+          <h3>{this.props.formType}</h3>
 
-            <form className="login-form" onSubmit={this.handleSubmit}>
-              <label htmlFor="email">
-                <span>Email:</span>
-                <input
-                  type="text"
-                  id="email"
-                  className="login-email-input"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                />
-              </label>
-              <label htmlFor="password">
-                <span>Password:</span>
-                <input
-                  type="password"
-                  id="password"
-                  className="login-password-input"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                />
-              </label>
+          <form className="login-form" onSubmit={this.handleSubmit}>
+            <label htmlFor="email">
+              {/* <span>Email:</span> */}
+              <input
+                type="text"
+                id="email"
+                className="login-email-input"
+                placeholder="Email"
+                value={this.state.email}
+                onChange={this.update("email")}
+              />
+            </label>
+            <label htmlFor="password">
+              {/* <span>Password:</span> */}
+              <input
+                type="password"
+                id="password"
+                className="login-password-input"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.update("password")}
+              />
+            </label>
 
+            <div className="login-buttons">
               <input
                 type="submit"
                 className="login-form-btn"
@@ -98,17 +97,15 @@ class LoginForm extends React.Component {
               <input
                 type="submit"
                 className="guest-login-btn"
-                value="Demo User Login"
+                value="Demo User"
                 onClick={this.handleGuestLogin}
               />
+            </div>
 
-              <p className="other-form">
-                New to EarthFlix? <Link to="/signup">Sign Up now!</Link>
-              </p>
-            </form>
-
-            <figure className="black-bg"></figure>
-          </div>
+            <p className="other-form">
+              New to EarthFlix? <Link to="/signup">Sign Up now!</Link>
+            </p>
+          </form>
         </section>
       </div>
     );

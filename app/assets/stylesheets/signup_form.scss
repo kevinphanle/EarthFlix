@@ -83,6 +83,11 @@
     border: none;
     font-size: 20px;
     cursor: pointer;
+    transition: all .4s;
+
+    &:hover {
+        background-color: darken(rgb(57, 123, 237), 20%);
+    }
 }
 
 .guest-login-btn:focus {

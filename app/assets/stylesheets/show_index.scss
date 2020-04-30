@@ -1,24 +1,21 @@
-body {
-    height: 100%;
-    background: #141414;
-}
-
-html {
+body, html {
     height: 100%;
     overflow: scroll;
     overflow-x: hidden;
+    margin: 0;
 }
 
 #root {
-    height: 100vh;
-    width: 100vw;
+    min-width: 100%;
+    // min-height: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
 }
 
 ::-webkit-scrollbar {
     width: 0px;
-    /* Remove scrollbar space */
     background: transparent;
-    /* Optional: just make scrollbar invisible */
 }
 
 /* Optional: show position indicator in red */
@@ -27,15 +24,16 @@ html {
 }
 
 .main-content {
-    // background: white;
-    height: 100%;
+    width: 100%;
+    height: auto;
     position: relative;
     padding-bottom: 100px;
+    background-color: #141414;
+
 }
 
 .index-container {
-    background: #141414;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -46,9 +44,9 @@ html {
 .genre-rows {
     display: flex;
     flex-direction: column;
-    width: 95%;
-    margin: auto;
-
+    // width: 95%;
+    // margin: auto;
+    padding: 0 40px;
 }
 
 .genre-container {
@@ -60,27 +58,11 @@ html {
 }
 
 .genre-title {
-    position: relative;
-    width: 100px;
-    font-size: 30px;
+    font-size: 40px;
     color: white;
-    justify-content: center;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
 }
 
-.frontVideo {
-    width: 100%;
-    // height: 60%;
-}
-
-// .video-react.video-react-fluid {
-//     height: 100%;
-//     padding: 0;
-// }
-
-// .video-react {
-//     padding-top: 0;
-// }

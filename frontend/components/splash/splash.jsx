@@ -1,25 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import * as Images from '../images';
+import React from "react";
+import { Link, Switch, Route } from "react-router-dom";
+import * as Images from "../images";
+import SplashContent from "./splash-content";
+import LoginForm from "../session/login_form";
+import { AuthRoute } from "../../util/route_util";
 
-const Splash = props => (
-    <div className="splash-image-wrapper">
-        <img src={Images.earthBg} className="welcome-image" />
-        <div className="splash-wrapper">
+const Splash = (props) => (
+  <div
+    className="splash-image-wrapper"
+    style={{ backgroundImage: `url(${Images.earthBg})` }}
+  >
+    <div className="splash-content-wrapper">
+      <Switch>
+        <AuthRoute path="/login" component={LoginForm} />
+        <Route exact path="/" component={SplashContent} />
 
-            <div className="splash-content-wrapper">
-                <section className="splash-content">
-                    <h2>See what's next.</h2>
-                    <span>Watch Anywhere. Cancel Anytime.</span>
-
-                    <Link to='/signup' className='splash-signup-btn'>
-                        <h3>Sign Up Today </h3>
-                        <span>></span>
-                    </Link>
-                </section>
-            </div>
-        </div>
+      </Switch>
     </div>
-)
+  </div>
+);
 
 export default Splash;
