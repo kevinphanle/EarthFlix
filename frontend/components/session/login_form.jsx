@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import * as Images from "../images";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -55,59 +54,55 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    console.log(Images.earthBg);
+
+    console.log(this.state);
+
     return (
-      <div
-        className="login-page"
-      >
-        <section className="login-form-wrapper">
-          <h3>{this.props.formType}</h3>
+      <section className="login-form-wrapper">
+        <h3>{this.props.formType}</h3>
 
-          <form className="login-form" onSubmit={this.handleSubmit}>
-            <label htmlFor="email">
-              {/* <span>Email:</span> */}
-              <input
-                type="text"
-                id="email"
-                className="login-email-input"
-                placeholder="Email"
-                value={this.state.email}
-                onChange={this.update("email")}
-              />
-            </label>
-            <label htmlFor="password">
-              {/* <span>Password:</span> */}
-              <input
-                type="password"
-                id="password"
-                className="login-password-input"
-                placeholder="Password"
-                value={this.state.password}
-                onChange={this.update("password")}
-              />
-            </label>
+        <form className="login-form" onSubmit={this.handleSubmit}>
+          <label htmlFor="email">
+            <input
+              type="text"
+              id="email"
+              className="login-email-input"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.update("email")}
+            />
+          </label>
+          <label htmlFor="password">
+            <input
+              type="password"
+              id="password"
+              className="login-password-input"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={this.update("password")}
+            />
+          </label>
 
-            <div className="login-buttons">
-              <input
-                type="submit"
-                className="login-form-btn"
-                value={this.props.formType}
-              />
+          <div className="login-buttons">
+            <input
+              type="submit"
+              className="login-form-btn"
+              value={this.props.formType}
+            />
 
-              <input
-                type="submit"
-                className="guest-login-btn"
-                value="Demo User"
-                onClick={this.handleGuestLogin}
-              />
-            </div>
+            <input
+              type="submit"
+              className="guest-login-btn"
+              value="Demo User"
+              onClick={this.handleGuestLogin}
+            />
+          </div>
 
-            <p className="other-form">
-              New to EarthFlix? <Link to="/signup">Sign Up now!</Link>
-            </p>
-          </form>
-        </section>
-      </div>
+          <p className="other-form">
+            New to EarthFlix? <Link to="/signup">Sign Up now!</Link>
+          </p>
+        </form>
+      </section>
     );
   }
 }

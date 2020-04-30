@@ -23,7 +23,7 @@ const App = () => {
 
       <Modal />
       <Switch>
-        <AuthRoute path={["/", "/login"]} component={Splash} />
+        <AuthRoute exact path={["/", "/login"]} component={Splash} />
         <AuthRoute path="/signup" component={SignupForm} />
         {/* <AuthRoute path="/login" component={LoginForm} /> */}
 

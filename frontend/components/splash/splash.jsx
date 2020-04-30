@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Switch, Route } from "react-router-dom";
 import * as Images from "../images";
 import SplashContent from "./splash-content";
-import LoginForm from "../session/login_form";
+import LoginForm from "../session/login_container";
 import { AuthRoute } from "../../util/route_util";
 
 const Splash = (props) => (
