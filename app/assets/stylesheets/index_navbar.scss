@@ -1,16 +1,16 @@
 .index-navbar-wrapper {
-    width: 100vw;
-    height: 40px;
+    width: 100%;
+    // height: 40px;
     position: fixed;
     top: 0;
     z-index: 10;
 }
 
 .index-navbar {
-    width: 100vw;
+    width: 100%;
     height: 100%;
-    margin: auto;
-    padding: 15px 0;
+    // margin: auto;
+    padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,18 +19,15 @@
 
 html:not([data-scroll='0']) {
     .index-navbar {
-        background: #141414;
+        background: blue;
         transition: background .5s;
     }
 }
 
 .left-nav {
-    // width: 30%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // margin-top: 10px;
-    // padding-top: 5px;
 
     a {
         text-decoration: none;
@@ -38,7 +35,7 @@ html:not([data-scroll='0']) {
         font-family: 'Montserrat', sans-serif;
         letter-spacing: 1px;
         font-size: 12px;
-        padding: 10px;
+        // padding: 10px;
     }
 }
 
@@ -51,7 +48,7 @@ html:not([data-scroll='0']) {
 
 .main-logo-btn img {
     min-width: 50px;
-    margin-right: 3vw;
+    // margin-right: 3vw;
     height: 45px;
     // margin-left: 50px;
 }
@@ -61,7 +58,7 @@ html:not([data-scroll='0']) {
 }
 
 .right-nav {
-    margin-right: 50px;
+    // margin-right: 50px;
     display: flex;
     align-items: center;
     transition: all 1s;

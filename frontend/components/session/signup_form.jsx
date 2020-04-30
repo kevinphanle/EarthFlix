@@ -60,18 +60,16 @@ class SignupFrom extends React.Component {
           <div className="signup-buttons">
             <input type="submit" className="signup-form-btn" value="Sign Up" />
 
-            <form
-              onSubmit={this.handleGuestLogin}
-              className="signup-demo-login"
-            >
-              <input
-                type="submit"
-                value="Demo User"
-                className="guest-login-btn"
-              />
-            </form>
+            <input
+              type="submit"
+              value="Demo User"
+              className="guest-login-btn"
+              onClick={this.handleGuestLogin}
+            />
           </div>
-          <p class="other-form">Already a part of EarthFlix? <Link to="/login">Sign In now!</Link></p>
+          <p className="other-form">
+            Already a part of EarthFlix? <Link to="/login">Sign In now!</Link>
+          </p>
         </form>
       </section>
     );

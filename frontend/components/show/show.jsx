@@ -102,7 +102,6 @@ class Show extends React.Component {
 
     let myListStatus = this.props.addedToMyList ? removeShow : addShow;
 
-    console.log(window);
 
     return (
       <div

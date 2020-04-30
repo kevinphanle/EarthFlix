@@ -66,18 +66,16 @@
   cursor: pointer;
   width: 100%;
   border: none;
-}
+  transition: all .4s;
 
-// .email-signup,
-// .password-signup {
-//   height: 45px;
-//   border-radius: 2px;
-//   border: 2px solid transparent;
-//   font-size: 16px;
-//   padding: 10px 10px 5px 10px;
-//   background-color: #333;
-//   color: white;
-// }
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: darken(red, 20%);
+  }
+}
 
 .guest-login-btn {
   width: 100%;
