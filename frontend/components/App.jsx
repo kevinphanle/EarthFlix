@@ -36,7 +36,10 @@ const App = () => {
                     <ProtectedRoute path="/search" component={search_index_container} />
                 </Switch>
 
-                <Route path="/" component={footer}/>
+                <Switch>
+                    <Route path={["/", "/browse"]} component={footer}/>
+
+                </Switch>
             </main>
 
         </>
