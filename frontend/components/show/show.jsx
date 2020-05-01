@@ -131,12 +131,8 @@ class Show extends React.Component {
             <div className="myList-container">{myListStatus}</div>
           </div>
           <button onClick={this.handleOpen} className="show-drop-down">
-
             <img id="carat-down" src={window.carat} alt=""/>
           </button>
-        </div>
-        <div className="show-border-arrow">
-
         </div>
       </div>
     );

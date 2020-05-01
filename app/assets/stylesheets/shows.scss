@@ -8,6 +8,7 @@
 
 .grow:hover {
   transform: scale(1.1);
+  // position: absolute;
   z-index: 100;
   border: 2px solid white;
   padding: 0;
@@ -45,22 +46,16 @@
     outline: 2px solid white;
     transform: translateY(-0.95vw);
     transition: transform 0.5s;
+    
+  }
 
-    .show-border-arrow {
-      display: flex;
-
-      i {
-        color: white;
-        font-size: 1.99vw;
-      }
-    }
+  .show-drop-down {
+    display: none;
   }
 
   &:hover {
     .show-drop-down {
-      img {
-        display: block;
-      }
+      display: block;
     }
   }
 }
