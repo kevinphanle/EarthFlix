@@ -1,6 +1,5 @@
 .index-navbar-wrapper {
     width: 100%;
-    // height: 40px;
     position: fixed;
     top: 0;
     z-index: 10;
@@ -10,7 +9,6 @@
 .index-navbar {
     width: 100%;
     height: 100%;
-    // margin: auto;
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
@@ -52,7 +50,6 @@
 }
 
 .right-nav {
-    // margin-right: 50px;
     display: flex;
     align-items: center;
     transition: all 1s;
