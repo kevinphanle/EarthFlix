@@ -56,8 +56,8 @@ class IndexNav extends React.Component {
   render() {
     let navStyles = {};
     if (this.state.isTop) {
-    //   navStyles.backgroundColor = 'rgba(52, 52, 52, alpha)';
-      navStyles.backgroundColor = '#493485';
+      navStyles.backgroundColor = 'rgba(52, 52, 52, alpha)';
+      // navStyles.backgroundColor = '#493485';
     } else {
       navStyles.backgroundColor = "#000";
     }
