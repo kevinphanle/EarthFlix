@@ -11,8 +11,6 @@ class IndexNav extends React.Component {
     };
 
     this.handleLogout = this.handleLogout.bind(this);
-    this.storeScroll = this.storeScroll.bind(this);
-    // this.debounce = this.debounce.bind(this);
   }
 
   handleLogout() {
@@ -21,24 +19,9 @@ class IndexNav extends React.Component {
       .then(this.props.logout().then(() => this.props.history.push("/")));
   }
 
-  //   debounce(fn) {
-  //     let frame;
-  //     return (...params) => {
-  //       if (frame) {
-  //         cancelAnimationFrame(frame);
-  //       }
-  //       frame = requestAnimationFrame(() => {
-  //         fn(...params);
-  //       });
-  //     };
-  //   }
-
-  storeScroll() {}
-
   componentDidMount() {
     document.addEventListener("scroll", () => {
       const isTop = window.scrollY < 100;
-      console.log(window.scrollY);
       if (isTop !== this.state.isTop) {
         this.setState({ isTop: isTop });
       }
@@ -56,8 +39,7 @@ class IndexNav extends React.Component {
   render() {
     let navStyles = {};
     if (this.state.isTop) {
-      navStyles.backgroundColor = 'rgba(52, 52, 52, alpha)';
-      // navStyles.backgroundColor = '#493485';
+      navStyles.backgroundColor = "rgba(52, 52, 52, 0.0)";
     } else {
       navStyles.backgroundColor = "#000";
     }

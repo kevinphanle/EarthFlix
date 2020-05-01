@@ -1,118 +1,130 @@
 .index-navbar-wrapper {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    transition: all .4s;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  transition: all 0.4s;
 }
 
 .index-navbar {
-    width: 100%;
-    height: 100%;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 95%;
+  height: 100%;
+  padding: 10px 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 
 .left-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 30%;
+  max-width: 400px;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    a {
-        text-decoration: none;
-        color: white;
-        font-family: 'Montserrat', sans-serif;
-        letter-spacing: 1px;
-        font-size: 12px;
-    }
+  a {
+    text-decoration: none;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1px;
+    font-size: 18px;
+  }
 }
 
-
-
-
 .main-logo-btn img {
-    min-width: 50px;
-    height: 45px;
+  height: 50px;
 }
 
 .active-search {
-    transition: all 2s;
+  transition: all 2s;
 }
 
 .right-nav {
+  display: flex;
+  align-items: center;
+  transition: all 1s;
+
+  .search-container {
     display: flex;
     align-items: center;
     transition: all 1s;
 
-    .search-container {
-        display: flex;
+    .search-button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      i {
+        color: white;
+        font-size: 20px;
         align-items: center;
-        transition: all 1s;
-
-        .search-button {
-            background: transparent;
-            border: none;
-            cursor: pointer;
-
-            &:focus {
-                outline: none;
-            }
-
-            i {
-                color: white;
-                font-size: 20px;
-                align-items: center;
-            }
-        }
-
-        .search-box {
-            color: white;
-            padding: 5px;
-            display: flex;
-            justify-content: space-between;
-            border: 1px solid white;
-
-            .search-form {
-                width: 100%;
-                display: flex;
-                justify-content: space-evenly;
-
-                .search-form-input {
-                    background-color: transparent;
-                    color: white;
-                    border: none;
-                    font-size: 20px;
-                    
-                    &:focus {
-                        outline: none;
-                    }
-                }
-
-                .search-input-clear-btn {
-                    border: none;
-                    background: transparent;
-                    color: white;
-
-                    &:focus {
-                        outline: none;
-                    }
-                }
-            }
-        }
+      }
     }
+
+    .search-box {
+      color: white;
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid white;
+
+      .search-form {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        .search-form-input {
+          background-color: transparent;
+          color: white;
+          border: none;
+          font-size: 20px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .search-input-clear-btn {
+          border: none;
+          background: transparent;
+          color: white;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
 }
 
-.logout-htn {
-    transition: all .4s;
+.logout-btn {
+  padding: 10px 30px;
+  border-radius: 2px;
+  // margin: 10px;
+  font-family: "Montserrat", sans-serif;
+  // text-decoration: none;
+  color: white;
+  background-color: red;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s;
+  font-size: 14px;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 
-    &:hover {
-        background-color: dodgerblue;
-    }
+  &:hover {
+    background-color: darken(red, 20%);
+  }
 }
