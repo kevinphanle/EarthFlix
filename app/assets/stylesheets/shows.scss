@@ -1,104 +1,95 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import 'video-react/styles/scss/video-react';
+@import "video-react/styles/scss/video-react";
 
 .grow {
-    transition: all .5s ease-in-out;
+  transition: all 0.4s;
 }
 
 .grow:hover {
-    transform: scale(1.3);
-    z-index: 300;
-    border: 1px solid white;
-    padding: 0;
+  transform: scale(1.1);
+  z-index: 100;
+  border: 2px solid white;
+  padding: 0;
 }
 
 .show-thumbnail-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    // height: 200px;
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .show-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100vw;
-    // height: 250px;
-    background-color: #141414;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  background-color: #141414;
 }
 
 .show-border-arrow {
-    display: none;
-    width: 100%;
-    position: absolute;
-    bottom: -1.3vw;
-    justify-content: center;
-    align-items: center;
+  display: none;
+  width: 100%;
+  position: absolute;
+  bottom: -1.3vw;
+  justify-content: center;
+  align-items: center;
 }
 
 .show-thumbnail {
-    margin-right: 5px;    
+  margin-right: 5px;
 
-    &.active {
-        outline: 2px solid white;
-        transform: translateY(-.95vw);
-        transition: transform .5s;
-        
-        .show-border-arrow {
-            display: flex;
+  &.active {
+    outline: 2px solid white;
+    transform: translateY(-0.95vw);
+    transition: transform 0.5s;
 
-            i {
-                color: white;
-                font-size: 1.99vw;
-            }
-        }
-        
+    .show-border-arrow {
+      display: flex;
+
+      i {
+        color: white;
+        font-size: 1.99vw;
+      }
     }
+  }
 
-    &:hover {
-        .show-drop-down {
-            i {
-                display: block;
-            }
-        }
+  &:hover {
+    .show-drop-down {
+      i {
+        display: block;
+      }
     }
+  }
 }
-
 
 .show-drop-down {
-    display: flex;
-    height: 25%;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-    background: none;
-    border:none;
-    color: whitesmoke;
-    
-    img {
-        width: 15px;
+  display: flex;
+  height: 25%;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background: none;
+  border: none;
+  color: whitesmoke;
 
-        &:hover {
-            cursor: pointer;
-        }
+  img {
+    width: 15px;
+
+    &:hover {
+      cursor: pointer;
     }
+  }
 
-    &:focus {
-        outline: none;
-    }
-
-
+  &:focus {
+    outline: none;
+  }
 }
-
-
 
 // .video-react .video-react-control-bar {
 //     display: none;
@@ -106,199 +97,197 @@
 
 .video-react .video-react-big-play-button,
 .video-react .video-react-big-play-button-left {
-    display: none;
+  display: none;
 }
 
 // .video-react .video-react-loading-spinner {
 //     display: none;
 // }
 
-.video-react-poster, .video-react {
-    background-size: cover !important;
+.video-react-poster,
+.video-react {
+  background-size: cover !important;
 }
 
 .myList-container {
-    display: none;
-    position: absolute;
-    right: 0;
-    bottom: 3vw;
-    padding-right: 5%;
-    font-size: 1.7vw;
-    height: 2vw;
-    width: 2vw;
-    transition: font-size 1s;
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 3vw;
+  padding-right: 5%;
+  font-size: 1.7vw;
+  height: 2vw;
+  width: 2vw;
+  transition: font-size 1s;
 
-    button {
-        height: 100%;
-        width: 100%;
-        border: none;
-        background: transparent;
-        border-radius: 100%;
-        color: whitesmoke;
-        text-align: center;
-        font-size: 1.5vw;
+  button {
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: transparent;
+    border-radius: 100%;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 1.5vw;
 
-        &:focus {
-            outline: none;
-        }
+    &:focus {
+      outline: none;
     }
-
-    
+  }
 }
 
 .myList-container:hover i {
-    font-size: 2vw;
-    transition: font-size .3s;
-    cursor: pointer;
+  font-size: 2vw;
+  transition: font-size 0.3s;
+  cursor: pointer;
 }
 
 .myList-container:hover .mylist-status-dropdown {
-    display: block;
+  display: block;
 }
 
 .mylist-button {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 .mylist-status-dropdown {
-    display: none;
-    position: absolute;
-    width: 7vw;
-    background-color: white;
-    font-size: 0.7vw;
-    min-height: 1.2vw;
-    text-align: center;
-    align-content: center;
-    color: black;
-    box-sizing: border-box;
-    left: -2.5vw;
-    top: 2.2vw;
-    font-weight: 600;
-    padding: 0.2vw 0;
+  display: none;
+  position: absolute;
+  width: 7vw;
+  background-color: white;
+  font-size: 0.7vw;
+  min-height: 1.2vw;
+  text-align: center;
+  align-content: center;
+  color: black;
+  box-sizing: border-box;
+  left: -2.5vw;
+  top: 2.2vw;
+  font-weight: 600;
+  padding: 0.2vw 0;
 }
 
 .show-item-content {
-    background-color: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(55,55,66,1) 49%, rgba(92,93,93,1) 100%);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    width: 250px;
-    height: 150px;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    font-family: 'Montserrat', 'sans serif';
+  background-color: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(55, 55, 66, 1) 49%,
+    rgba(92, 93, 93, 1) 100%
+  );
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 250px;
+  height: 150px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: "Montserrat", "sans serif";
 
-    &.lazy {
-        background-image: none;
-        background-color: #F1F1FA;
-    }
+  &.lazy {
+    background-image: none;
+    background-color: #f1f1fa;
+  }
 
-    .b {
+  .b {
+    width: 100%;
+    background-color: transparent;
+    height: 100%;
+    margin: 0;
+    z-index: 2;
+
+    .show-item-link {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      text-decoration: none;
+
+      .dark-overlay {
         width: 100%;
-        background-color: transparent;
         height: 100%;
-        margin: 0;
-        z-index: 2;
+        background: rgba(0, 0, 0, 0.2);
+        box-sizing: content-box;
 
-        .show-item-link {
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-            text-decoration: none;
-
-
-            .dark-overlay {
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.2);
-                box-sizing: content-box;
-
-                &:hover i {
-                    color: rgba(229,9,20, 1);
-                }
-
-
-                .show-item-overlay {
-                    display: none;
-                    width: 100%;
-                    background: transparent;
-                    height: 100%;
-                    padding: 0 5%;
-                    box-sizing: border-box;
-                    opacity: 1;
-                    text-decoration: none !important;
-
-                    .show-play-btn {
-                        display: flex;
-                        margin-bottom: 0.5vw;
-                        margin-top: 2vw;
-                        font-size: 1.5vw;
-                        color: whitesmoke;
-                    }
-
-                    .show-title {
-                        color: whitesmoke;
-                        text-decoration: none;
-                        font-size: 1.1vw;
-                        font-weight: 600;
-                        margin-bottom: 0.5vw;
-                        background: rgba(0, 0, 0, 0.15);
-                        border-radius: 1px;
-                        letter-spacing: .1vw;
-                    }
-
-                    .show-overlay-details {
-                        display: flex;
-                        width: 5vw;
-                        justify-content: flex-start;
-                        background: rgba(0, 0, 0, 0.2);
-                        border-radius: 1px;
-                        align-content: center;
-
-                        .show-item-rating {
-                            width: 3vw;
-                            border: 1px solid whitesmoke;
-                            font-size: .8vw;
-                            text-align: center;
-                            font-weight: 600;
-                            border-radius: 1px;
-                            text-decoration: none;
-                            color: white;
-                            padding: .2vw;
-                            
-                        }
-                    }
-                }
-            }
-
+        &:hover i {
+          color: rgba(229, 9, 20, 1);
         }
-    }
-    &:hover {
+
         .show-item-overlay {
-            z-index: 20;
-            display: flex !important;
-            flex-direction: column;
+          display: none;
+          width: 100%;
+          background: transparent;
+          height: 100%;
+          padding: 0 5%;
+          box-sizing: border-box;
+          opacity: 1;
+          text-decoration: none !important;
+
+          .show-play-btn {
+            display: flex;
+            margin-bottom: 0.5vw;
+            margin-top: 2vw;
+            font-size: 1.5vw;
+            color: whitesmoke;
+          }
+
+          .show-title {
+            color: whitesmoke;
+            text-decoration: none;
+            font-size: 1.1vw;
+            font-weight: 600;
+            margin-bottom: 0.5vw;
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 1px;
+            letter-spacing: 0.1vw;
+          }
+
+          .show-overlay-details {
+            display: flex;
+            width: 5vw;
             justify-content: flex-start;
-        }
-
-        .myList-container {
-            display: flex !important;
-            justify-content: center;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 1px;
             align-content: center;
-        }
 
+            .show-item-rating {
+              width: 3vw;
+              border: 1px solid whitesmoke;
+              font-size: 0.8vw;
+              text-align: center;
+              font-weight: 600;
+              border-radius: 1px;
+              text-decoration: none;
+              color: white;
+              padding: 0.2vw;
+            }
+          }
+        }
+      }
     }
-    
+  }
+  &:hover {
+    .show-item-overlay {
+      z-index: 20;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .myList-container {
+      display: flex !important;
+      justify-content: center;
+      align-content: center;
+    }
+  }
 }
 
-
-.left-carousel-btn, .right-carousel-btn {
-    width: 50px;
+.left-carousel-btn,
+.right-carousel-btn {
+  width: 50px;
 }
