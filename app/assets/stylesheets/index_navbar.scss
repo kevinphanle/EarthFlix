@@ -40,9 +40,7 @@
 
 .main-logo-btn img {
     min-width: 50px;
-    // margin-right: 3vw;
     height: 45px;
-    // margin-left: 50px;
 }
 
 .active-search {
@@ -112,6 +110,14 @@
     }
 }
 
-.logout-btn:hover {
-    background-color: dodgerblue;
+.logout-htn {
+    transition: all .4s;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: dodgerblue;
+    }
 }
