@@ -17,7 +17,8 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "video-react": "^0.14.1"
+    "video-react": "^0.14.1",
+    "webpack": "^4.43.0"
   },
   "description": "## MVP",
   "version": "1.0.0",
@@ -33,7 +34,6 @@
   },
   "scripts": {
     "start": "webpack --watch --mode=development",
-    "postinstall": "webpack",
     "build": "webpack --config webpack.config.js"
   },
   "repository": {
