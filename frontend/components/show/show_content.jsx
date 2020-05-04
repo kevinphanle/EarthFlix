@@ -28,19 +28,13 @@ class ShowContent extends React.Component {
     let addVideo =
       <div className="content-mylist-btn-container">
         <button onClick={this.addToMyList}>
-          <div className="content-play-btn">
-            <i className="fas fa-plus"></i>
-          </div>
-          <div className="content-mylist-text">MY LIST</div>
+          ADD TO LIST
         </button>
       </div>;
     let removeVideo =
       <div className="content-mylist-btn-container">
         <button onClick={this.removeFromMyList}>
-          <div className="content-play-btn">
-            <i className="fas fa-check"></i>
-          </div>
-          <div className="content-mylist-text">MY LIST</div>
+          REMOVE FROM LIST
         </button>
       </div>;
     let myListStatus = this.props.addedToMyList ? removeVideo : addVideo;
@@ -54,8 +48,7 @@ class ShowContent extends React.Component {
             <div className="content-play-btn-container">
               <Link to={`/watch/${show.id}`}>
                 <div className="content-play-btn">
-                  <i className="fas fa-play"></i>
-                  <div className="content-play-btn-text">Play</div>
+                  PLAY
                 </div>
               </Link>
             </div>

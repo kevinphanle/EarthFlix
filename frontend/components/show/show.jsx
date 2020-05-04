@@ -113,12 +113,12 @@ class Show extends React.Component {
           style={{ backgroundImage: "url(" + show.posterUrl + ")" }}
         >
           <div className="b">
-            <Link to={`/watch/${show.id}`}>
+            <Link to={`/watch/${show.id}`} style={{textDecoration: 'none'}}>
               <div className="show-item-link">
                 <div className="dark-overlay">
                   <div className="show-item-overlay">
                     
-                    <div className="show-title" style={{textDecoration: 'none'}}>{show.title}</div>
+                    <div className="show-title" >{show.title}</div>
                     <div className="show-overlay-details">
                       <div className="show-item-rating">{show.rating}</div>
                     </div>
