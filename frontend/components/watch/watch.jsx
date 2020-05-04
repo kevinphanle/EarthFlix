@@ -1,31 +1,16 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Player, ControlBar, LoadingSpinner } from 'video-react';
 
 
 class Watch extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
     componentDidMount() {
         this.props.fetchShow(this.props.match.params.showId);
-        this.player.subscribeToStateChange(this.handleStateChange.bind(this));
     }
     
-    componentDidUpdate() {
-        this.player.subscribeToStateChange(this.handleStateChange.bind(this))
-    }
-
-    handleStateChange(state) {
-        this.setState({
-            player: state
-        });
-    }
-
-
-
     render() {
         const { show } = this.props;
         if (!show) {
@@ -33,27 +18,20 @@ class Watch extends React.Component {
         }
 
         return (
-            <div className="watch-video-container" >
-                <Player
-                    ref={player => {
-                        this.player = player;
-                    }}
-                    // width="100%"
-                    autoPlay
-                    loop={true}
-                    // muted={true}
-                    load={true}
+            <div className="watch-video-container">
+                <video
                     src={show.videoUrl}
-                    poster={show.posterUrl}
-                    fluid={true}
-                >
-                    <LoadingSpinner/>
-                    <ControlBar autoHide={true} />
-                </Player>
+                    controls
+                    autoPlay
+                    preload="true"
+                    loop
+                    onMouseOver={() => this.controls = true}
+                    onMouseOut={() => this.controls = false}
+                ></video>
 
                 <Link to='/browse'>
                     <div className="show-watch-back-btn">
-                        <i className="fas fa-arrow-alt-circle-left"></i>
+                        <span>BACK</span>
                     </div>
                 </Link>
 

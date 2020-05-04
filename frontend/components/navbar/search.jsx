@@ -71,9 +71,6 @@ class Search extends React.Component {
     document.removeEventListener('mousedown', this.handleClick, false);
   }
 
-  
-  
-
   componentDidUpdate(prevProps, prevState) {
     if (prevState.input !== "" && this.state.input === "") {
         this.props.clearSearchResults();
@@ -85,7 +82,7 @@ class Search extends React.Component {
     let expanded = 
       <div className="search-box">
         <button className="search-button" onClick={this.handleExpand}>
-          <i className="fas fa-search"></i>
+          <img src={window.search} alt=""/>
         </button>
         <form onSubmit={this.handleSubmit} className="search-form" ref={node => this.node = node}>
           <input
@@ -97,10 +94,10 @@ class Search extends React.Component {
             onKeyUp={e => this.search(e.target.value)}
             autoFocus
           />
-          <button className="search-input-clear-btn" onClick={this.handleClear}><i className="fas fa-times"></i></button>
+          <button className="search-input-clear-btn" onClick={this.handleClear}>x</button>
         </form>
       </div>
-    let compressed = <button onClick={this.handleExpand} className="search-button"><i className="fas fa-search"></i></button>
+    let compressed = <button onClick={this.handleExpand} className="search-button"><img src={window.search} alt=""/></button>
 
     let search = this.state.active ? expanded : compressed;
 

@@ -3,10 +3,10 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: #141414;
+    background: black;
     width: 100%;
 
-    .video-react {
+    video {
         width: 100%;
         height: 100%;
     }
@@ -17,22 +17,14 @@
     color: white;
     opacity: .3;
     font-size: 40px;
-    top: 25px;
+    top: 50px;
     left: 50px;
-    border-radius: 100%;
     z-index: 1;
+    font-family: 'Montserrat', sans-serif;
 
     &:hover {
         position: absolute;
         color: white;
         opacity: .9;
-
-        &:after {
-            content: 'back to browse';
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            margin-left: 10px;
-            font-size: 20px;
-        }
     }
 }

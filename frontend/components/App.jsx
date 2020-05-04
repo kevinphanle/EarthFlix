@@ -1,6 +1,4 @@
 import React from "react";
-import SignupForm from "./session/signup_container";
-import LoginForm from "./session/login_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import { Route, Switch } from "react-router-dom";
 import Splash from "./splash/splash";
@@ -32,7 +30,7 @@ const App = () => {
       </Switch>
 
       <Switch>
-        <Route path={["/", "/browse"]} component={footer} />
+        <Route exact path={["/", "/browse", "/browse/my-list", '/signup', '/login']} component={footer} />
       </Switch>
     </main>
   );

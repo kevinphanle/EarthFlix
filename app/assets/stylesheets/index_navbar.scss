@@ -42,6 +42,7 @@
 }
 
 .right-nav {
+    // width: 40%;
   display: flex;
   align-items: center;
   transition: all 1s;
@@ -50,20 +51,21 @@
     display: flex;
     align-items: center;
     transition: all 1s;
+    margin-right: 20px;
 
     .search-button {
       background: transparent;
       border: none;
       cursor: pointer;
+      padding: 0;
+      height: 30px;
 
       &:focus {
         outline: none;
       }
 
-      i {
-        color: white;
-        font-size: 20px;
-        align-items: center;
+      img {
+        width: 30px;
       }
     }
 
@@ -94,9 +96,14 @@
           border: none;
           background: transparent;
           color: white;
+          font-size: 14px;
 
           &:focus {
             outline: none;
+          }
+
+          &:hover {
+              cursor: pointer;
           }
         }
       }
@@ -107,14 +114,9 @@
 .logout-btn {
   padding: 10px 30px;
   border-radius: 2px;
-  // margin: 10px;
   font-family: "Montserrat", sans-serif;
-  // text-decoration: none;
   color: white;
   background-color: red;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   border: none;
   cursor: pointer;
   transition: all 0.4s;
