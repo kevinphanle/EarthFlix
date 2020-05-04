@@ -83,7 +83,6 @@
         }
 
         .content-mylist-btn-container {
-          // height: 2.6vw;
           width: 200px;
           height: 50px;
           border-radius: 2px;
@@ -101,10 +100,13 @@
             transition: all .4s;
 
             &:hover {
-              // transform: scale(1.1);
               background: white;
               color: black;
               cursor: pointer;
+            }
+
+            &:focus {
+              outline: none;
             }
           }
         }
