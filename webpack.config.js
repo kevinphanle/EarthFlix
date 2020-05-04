@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+    mode: "production",
     context: __dirname,
     entry: './frontend/earthflix.jsx',
     output: {
@@ -22,5 +23,8 @@ module.exports = {
             },
         }]
     },
-    devtool: 'source-map'
+    devtool: 'source-map',
+    performance: {
+        hints: false
+    }
 };

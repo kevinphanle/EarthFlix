@@ -1,6 +1,5 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "video-react/styles/scss/video-react";
 
 .grow {
   transition: all 0.4s;
@@ -86,23 +85,6 @@
   }
 }
 
-// .video-react .video-react-control-bar {
-//     display: none;
-// }
-
-.video-react .video-react-big-play-button,
-.video-react .video-react-big-play-button-left {
-  display: none;
-}
-
-// .video-react .video-react-loading-spinner {
-//     display: none;
-// }
-
-.video-react-poster,
-.video-react {
-  background-size: cover !important;
-}
 
 .myList-container {
   display: none;
