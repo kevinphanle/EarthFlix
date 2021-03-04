@@ -1,25 +1,23 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
 function Profile(props) {
   let { profile, handleSelectProfile } = props;
   return (
-    <div className="thumbnail-box">
+    <div className='thumbnail-box'>
       <button onClick={handleSelectProfile}>
-        <img src={profile.photoUrl} className="thumbnail" />
+        <img src={profile.photoUrl} className='thumbnail' />
       </button>
-      <div className="profile-name">{profile.name}</div> 
+      <div className='profile-name'>{profile.name}</div>
     </div>
-  )
+  );
 }
 
 const msp = (state, ownProps) => ({
   profile: ownProps.profile,
-  handleSelectProfile: ownProps.handleSelectProfile
-})
+  handleSelectProfile: ownProps.handleSelectProfile,
+});
 
-const mdp = dispatch => ({
-
-})
+const mdp = (dispatch) => ({});
 
 export default connect(msp, mdp)(Profile);

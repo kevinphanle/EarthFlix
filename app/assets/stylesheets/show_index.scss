@@ -1,66 +1,62 @@
-body, html {
-    overflow: scroll;
-    overflow-x: hidden;
-    margin: 0;
+body,
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  margin: 0;
 }
 
 #root {
-    min-width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
+  min-width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
+  width: 0px;
+  background: transparent;
 }
 
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: #FF0000;
+  background: #ff0000;
 }
 
 .main-content {
-    width: 100%;
-    height: auto;
-    position: relative;
-    padding-bottom: 180px;
-    background-color: #141414;
-
+  width: 100%;
+  height: auto;
+  position: relative;
+  // padding-bottom: 180px;
+  background-color: #141414;
 }
 
 .index-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-
-
 .genre-rows {
-    display: flex;
-    flex-direction: column;
-    // width: 95%;
-    // margin: auto;
-    padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  // width: 95%;
+  // margin: auto;
+  padding: 0 40px;
 }
 
 .genre-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding: 30px 0;
-
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 30px 0;
 }
 
 .genre-title {
-    font-size: 40px;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  font-size: 40px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
-

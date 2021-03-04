@@ -1,18 +1,18 @@
 .earthflix-footer {
-    background-color: #010101;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 3;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 25px 0;
-    height: 50px;
+  background-color: #010101;
+  // position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 25px 0;
+  height: 50px;
 }
 
 .earthflix-footer * {
-    margin: 5px 10px;
-    color: white;
+  margin: 5px 10px;
+  color: white;
 }

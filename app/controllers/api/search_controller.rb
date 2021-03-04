@@ -6,9 +6,11 @@ class Api::SearchController < ApplicationController
           render json: {}
           return
       end
-      @shows = Show.includes(:genres)
-          .where("title ILIKE (?)" , "%#{input}%").references(:genres)
-          .distinct
+      @shows = Show.joins(:genres)
+          .where("shows.title ILIKE :title", title: "%#{input}%")
+                .references(:genres)
+                .includes(:genres)
+                .distinct
       render :index
   end
 

@@ -19,9 +19,9 @@ ShowGenre.destroy_all
 guestUser = User.create!(email: 'guest@guest.com', password: 'password')
 
 # Profile
-defaultProfile = Profile.create!(user_id: guestUser.id, name: 'Spongebob')
+defaultProfile = Profile.create!(user_id: guestUser.id, name: 'Demo User')
 profile_photo = open('https://djqsww0k8h48a.cloudfront.net/profiles/panda.png')
-defaultProfile.photo.attach(io: profile_photo, filename: 'panda.png')
+defaultProfile.thumbnail.attach(io: profile_photo, filename: 'panda.png')
 
 
 # | --------------- VIDEOS ---------------------- |

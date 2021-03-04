@@ -1,59 +1,53 @@
 .header-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    z-index: 50;
-    height: 80px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 50;
+  height: 80px;
 }
-
-
 
 .header-nav {
-    display: flex;
-    width: 95%;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    margin: 0 auto;
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 0 auto;
 }
 
-
-
 .logo-btn {
-    width: 200px;
-    height: auto;
-    
-    img {
-        width: 100%;
-        // height: 100%;
-    }
+  width: 200px;
+  height: auto;
+
+  img {
+    width: 100%;
+    // height: 100%;
+  }
 }
 
 .login-btn {
-    padding: 10px 15px;
-    border-radius: 3px;
-    margin: 10px;
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-    color: white;
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding: 10px 15px;
+  border-radius: 3px;
+  margin: 10px;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
 .login-btn-white {
-    background: white;
-    border: none;
-    color: gray;
-    text-decoration: none;
-    padding: 10px 15px;
-    font-family: 'Montserrat', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
+  background: white;
+  border: none;
+  color: gray;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
 }

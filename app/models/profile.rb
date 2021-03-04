@@ -25,6 +25,6 @@ class Profile < ApplicationRecord
   through: :my_lists,
   source: :show
 
-  has_one_attached :photo
+  has_one_attached :thumbnail
 
 end

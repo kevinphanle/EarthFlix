@@ -4,7 +4,8 @@ class Api::ProfilesController < ApplicationController
   def create
       @profile = Profile.new(profile_params)
       @profile.user_id = current_user.id
-      @profile.photo.attach(params[:thumbnail])
+      profile_photo = open(params[:thumbnail])
+      @profile.thumbnail.attach(io:profile_photo, filename: 'profile-photo.png')
       if @profile.save
           set_current_profile(@profile)
           render :show
@@ -50,6 +51,6 @@ class Api::ProfilesController < ApplicationController
   private
 
   def profile_params
-      params.require(:profile).permit(:name, :set, :unset, :thumbnail)
+      params.require(:profile).permit(:name, :user_id, :set, :unset, :thumbnail)
   end
 end
